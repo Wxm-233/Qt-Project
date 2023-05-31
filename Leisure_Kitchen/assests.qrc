@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Pictures">
+        <file>assests/Pictures/test_Character.png</file>
+    </qresource>
+    <qresource prefix="/Audios"/>
+</RCC>

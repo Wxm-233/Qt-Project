@@ -9,6 +9,7 @@
 #include <QKeyEvent>
 #include <QImage>
 #include <QPixmap>
+#include <iostream>
 #include <cmath>
 #include <enums.h>
 
@@ -16,7 +17,7 @@ class Character : public QObject
 {
     Q_OBJECT
 private:
-    const static int speed = 20;
+    const static int speed = 10;
     QLabel *picture;
     QImage *img;
     int x;

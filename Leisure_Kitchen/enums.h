@@ -13,7 +13,7 @@ enum BlockType {
     //洗碗池，上菜处，盘子出现的地方，食材仓库
 };
 
-constexpr double PAI = 3.1415926535897932384626;
+constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
 
 //enum Cooking_Bench_Type {

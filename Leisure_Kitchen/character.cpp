@@ -32,11 +32,14 @@ void Character::move(bool directionState[4])
     x += speed * x_dir;
     y += speed * y_dir;
 
-    if (x == 0) {
-        facing = y == 0 ? facing : y > 0 ? PAI/2 : 3*PAI/2;
+    if (x_dir == 0) {
+        facing = y_dir == 0 ? facing : y_dir < 0 ? PI/2 : 3*PI/2;
     } else {
-        facing = y < 0 ? PAI : 0 + std::atan(double(y/x));
+        double atan = std::atan(double(-y_dir/x_dir));
+        facing = atan == 0 ? (x_dir > 0 ? 0 : PI) : ((atan > 0 ? atan : atan + PI) + (y_dir < 0 ? 0 : PI));
     }
+
+    std::clog << facing << std::endl;
 
     picture->setGeometry(x, y, picture->width(), picture->height());
 }
@@ -44,7 +47,7 @@ void Character::move(bool directionState[4])
 void Character::dash()
 {
     x += 10 * speed * std::cos(facing);
-    y += 10 * speed * std::sin(facing);
+    y -= 10 * speed * std::sin(facing);
 
     picture->setGeometry(x, y, picture->width(), picture->height());
 }

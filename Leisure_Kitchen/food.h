@@ -9,9 +9,12 @@ public:
     Food(FoodType t, int x, int y);
     bool operator<(const Food& another) const;
     bool operator==(const Food& another) const;
+    FoodType type();
+    bool isProcessed();
+    void process();
 private:
-    FoodType type;
-    bool isProcessed;
+    FoodType t;
+    bool _isProcessed;
 };
 
 #endif // FOOD_H

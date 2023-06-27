@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     character.cpp \
+    cookingbench.cpp \
     dish.cpp \
     food.cpp \
     item.cpp \
@@ -19,12 +20,15 @@ SOURCES += \
     mapblock.cpp \
     orders.cpp \
     receiver.cpp \
+    repository.cpp \
     scoreboard.cpp \
     start_window.cpp \
-    table.cpp
+    table.cpp \
+    trashcan.cpp
 
 HEADERS += \
     character.h \
+    cookingbench.h \
     dish.h \
     enums.h \
     food.h \
@@ -34,9 +38,11 @@ HEADERS += \
     mapblock.h \
     orders.h \
     receiver.h \
+    repository.h \
     scoreboard.h \
     start_window.h \
-    table.h
+    table.h \
+    trashcan.h
 
 FORMS += \
     game.ui \

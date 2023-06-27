@@ -7,10 +7,10 @@ enum Direction {
 };
 
 enum BlockType {
-    TABLE, CHOPPING_BLOCK, TRASH_CAN,
-    //桌台，砧板，垃圾桶
-    SINK, RECEIVER, DISHES_BLOCK, REPOSITORY, COOKING_BENCH
-    //洗碗池，上菜处，盘子出现的地方，食材仓库, 灶台
+    TABLE, TRASH_CAN,
+    //桌子，垃圾桶
+    RECEIVER, REPOSITORY, COOKING_BENCH
+    //上菜处，食材仓库, 灶台
 };
 
 enum FoodType {
@@ -19,6 +19,10 @@ enum FoodType {
 
 enum ItemType {
     COOKER, PLATE, FOOD
+};
+
+enum CookerType {
+    CHOPPING_BOARD, POT
 };
 
 constexpr double PI = 3.1415926535897932384626;

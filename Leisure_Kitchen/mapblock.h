@@ -3,13 +3,15 @@
 #define MAPBLOCK_H
 
 #include <QLabel>
+#include <QObject>
 #include <enums.h>
 
 
-class MapBlock
+class MapBlock : public QObject
 {
 public:
     MapBlock(BlockType t, int x, int y);
+    BlockType type();
 private:
     QLabel *picture;
     int w, h;

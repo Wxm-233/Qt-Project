@@ -73,6 +73,11 @@ void Character::resume()
     isPaused = false;
 }
 
+void Character::interact()
+{
+
+}
+
 Character::~Character()
 {
 

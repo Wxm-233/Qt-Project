@@ -22,4 +22,3 @@ void Start_Window::on_pushButton_clicked()
     this->hide();
     game->show();
 }
-

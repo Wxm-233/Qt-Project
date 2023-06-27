@@ -9,12 +9,21 @@ enum Direction {
 enum BlockType {
     TABLE, CHOPPING_BLOCK, TRASH_CAN,
     //桌台，砧板，垃圾桶
-    POOL, RECEIVER, DISHES_BLOCK, REPOSITORY
-    //洗碗池，上菜处，盘子出现的地方，食材仓库
+    SINK, RECEIVER, DISHES_BLOCK, REPOSITORY, COOKING_BENCH
+    //洗碗池，上菜处，盘子出现的地方，食材仓库, 灶台
+};
+
+enum FoodType {
+    FISH, RICE, HAITAI, CUCUMBER, CABBAGE, TOMATO
+};
+
+enum ItemType {
+    COOKER, PLATE, FOOD
 };
 
 constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
+constexpr int PixelsPerBlock = 100;
 
 //enum Cooking_Bench_Type {
 //    WOK, FRYER, SAUCEPAN

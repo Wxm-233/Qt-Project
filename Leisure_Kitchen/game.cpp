@@ -84,7 +84,11 @@ void Game::mainLoop()
 void Game::pause()
 {
     isPaused = true;
+    c->pause();
+    o->pause();
     QMessageBox::information(this, "PAUSED", "The game is paused.", QMessageBox::Ok);
+    c->resume();
+    o->resume();
     isPaused = false;
 }
 

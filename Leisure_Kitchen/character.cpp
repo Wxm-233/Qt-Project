@@ -7,12 +7,15 @@ Character::Character(QWidget *parent, int x, int y) : x(x), y(y)
     picture = new QLabel(parent);
     picture->resize(img->width(), img->height());
     picture->setPixmap(QPixmap::fromImage(*img));
-    picture->setGeometry(x - 50, y - 50, img->width(), img->height());
-    picture->show();
+    picture->move(x - 50, y - 50);
+    //picture->show();
 }
 
 void Character::move(bool directionState[4])
 {
+    if (isPaused)
+        return;
+
     int x_dir = 0;
     int y_dir = 0;
 
@@ -29,8 +32,11 @@ void Character::move(bool directionState[4])
         x_dir += 1;
     }
 
-    x += speed * x_dir;
-    y += speed * y_dir;
+    int new_x = x + speed * x_dir;
+    int new_y = y + speed * y_dir;
+
+    x = m->isReachable(new_x, y) ? new_x : x;
+    y = m->isReachable(x, new_y) ? new_y : y;
 
     if (x_dir == 0) {
         facing = y_dir == 0 ? facing : y_dir < 0 ? PI/2 : 3*PI/2;
@@ -39,17 +45,32 @@ void Character::move(bool directionState[4])
         facing = atan == 0 ? (x_dir > 0 ? 0 : PI) : ((atan > 0 ? atan : atan + PI) + (y_dir < 0 ? 0 : PI));
     }
 
-    std::clog << facing << std::endl;
+    //std::clog << facing << std::endl;
 
-    picture->setGeometry(x, y, picture->width(), picture->height());
+    picture->move(x, y);
 }
 
 void Character::dash()
 {
-    x += 10 * speed * std::cos(facing);
-    y -= 10 * speed * std::sin(facing);
+    if (isPaused)
+        return;
 
-    picture->setGeometry(x, y, picture->width(), picture->height());
+    int new_x = x + 10 * speed * std::cos(facing);
+    int new_y = y - 10 * speed * std::sin(facing);
+    x = m->isReachable(new_x, y) ? new_x : x;
+    y = m->isReachable(x, new_y) ? new_y : y;
+
+    picture->move(x, y);
+}
+
+void Character::pause()
+{
+    isPaused = true;
+}
+
+void Character::resume()
+{
+    isPaused = false;
 }
 
 Character::~Character()

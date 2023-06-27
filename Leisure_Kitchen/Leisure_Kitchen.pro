@@ -10,19 +10,33 @@ CONFIG += c++17
 
 SOURCES += \
     character.cpp \
-    gamemap.cpp \
+    dish.cpp \
+    food.cpp \
+    item.cpp \
     main.cpp \
     game.cpp \
+    map.cpp \
     mapblock.cpp \
-    start_window.cpp
+    orders.cpp \
+    receiver.cpp \
+    scoreboard.cpp \
+    start_window.cpp \
+    table.cpp
 
 HEADERS += \
     character.h \
+    dish.h \
     enums.h \
+    food.h \
     game.h \
-    gamemap.h \
+    item.h \
+    map.h \
     mapblock.h \
-    start_window.h
+    orders.h \
+    receiver.h \
+    scoreboard.h \
+    start_window.h \
+    table.h
 
 FORMS += \
     game.ui \

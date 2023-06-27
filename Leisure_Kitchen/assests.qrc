@@ -3,4 +3,7 @@
         <file>assests/Pictures/test_Character.png</file>
     </qresource>
     <qresource prefix="/Audios"/>
+    <qresource prefix="/MapResources">
+        <file>assests/MapResources/Map1.json</file>
+    </qresource>
 </RCC>

@@ -33,6 +33,7 @@ public:
     void move(bool directionState[4]);
     void pause();
     void resume();
+    void interact();
 signals:
 
 };

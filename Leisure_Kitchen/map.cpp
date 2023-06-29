@@ -15,3 +15,8 @@ bool Map::isReachable(int x, int y)
 {
     return true;
 }
+
+MapBlock* Map::locate(int x, int y)
+{
+    return nullptr;
+}

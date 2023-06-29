@@ -9,6 +9,8 @@ public:
     Table(Item* i, int x, int y);
     Item* pick_up();
     bool put_down(Item* i);
+    bool isEmpty();
+    Item* getItem();
 private:
     Item* i;
 };

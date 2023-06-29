@@ -19,3 +19,13 @@ bool Table::put_down(Item *i)
     this->i = i;
     return true;
 }
+
+bool Table::isEmpty()
+{
+    return i == nullptr;
+}
+
+Item* Table::getItem()
+{
+    return i;
+}

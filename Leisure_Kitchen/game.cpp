@@ -43,7 +43,10 @@ void Game::keyPressEvent(QKeyEvent *e)
         directionStatus[RIGHT] = true;
         break;
     case Qt::Key_I:
-        c->dash();
+        c->dash(m);
+        break;
+    case Qt::Key_U:
+        c->interact(m);
         break;
     default:
         break;
@@ -78,7 +81,7 @@ void Game::mainLoop()
     if (isPaused)
         return;
 
-    c->move(directionStatus);
+    c->move(directionStatus, m);
 }
 
 void Game::pause()

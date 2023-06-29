@@ -8,6 +8,7 @@
 #include <character.h>
 #include <enums.h>
 #include <orders.h>
+#include <map.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -37,6 +38,7 @@ private:
     QWidget* start_window;
     QTimer* t;
     Orders* o;
+    Map* m;
     void closeEvent(QCloseEvent* e);
     bool isPaused = false;
     bool directionStatus[4] = {false};

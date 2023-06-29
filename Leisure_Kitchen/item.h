@@ -9,6 +9,7 @@ class Item
 public:
     Item(ItemType, int x, int y);
     ItemType type;
+    void move();
 private:
     int w = 1, h = 1;
     int x, y;

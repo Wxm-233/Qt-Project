@@ -13,6 +13,11 @@
 #include <cmath>
 #include <enums.h>
 #include <map.h>
+#include <table.h>
+#include <item.h>
+#include <pot.h>
+#include <plate.h>
+#include <choppingblock.h>
 
 class Character : public QObject
 {
@@ -24,16 +29,17 @@ private:
     int x, y;
     int w, h;
     double facing;
-    Map* m;
+    Item* i;
     bool isPaused = false;
 public:
     Character(QWidget *parent = nullptr, int x = 0, int y = 0);
     ~Character();
-    void dash();
-    void move(bool directionState[4]);
+    void dash(Map* m);
+    void move(bool directionState[4], Map* m);
     void pause();
     void resume();
-    void interact();
+    //void interact(int x, int y);
+    void interact(Map* m);
 signals:
 
 };

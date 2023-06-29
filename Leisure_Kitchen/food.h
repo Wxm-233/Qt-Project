@@ -11,10 +11,14 @@ public:
     bool operator==(const Food& another) const;
     FoodType type();
     bool isProcessed();
-    void process();
+    bool isCut();
+    bool isCooked();
+    void cut();
+    void cook();
 private:
     FoodType t;
-    bool _isProcessed;
+    bool _isCooked;
+    bool _isCut;
 };
 
 #endif // FOOD_H

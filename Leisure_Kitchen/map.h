@@ -14,6 +14,7 @@ public:
     Map();
     void addBlock();
     bool isReachable(int x, int y);
+    MapBlock* locate(int x, int y);
 private:
     int w;
     int h;

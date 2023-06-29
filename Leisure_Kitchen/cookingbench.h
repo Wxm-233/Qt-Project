@@ -10,8 +10,9 @@ class CookingBench : public MapBlock
 {
 public:
     CookingBench(int x, int y);
-    bool putItem(Item* i);
-    void processFood();
+    //bool put_down(Item* i);
+    //Item* pick_up();
+    //void processFood();
 private:
     Item* i;
     QTimer* t;

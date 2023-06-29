@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     character.cpp \
+    choppingblock.cpp \
     cookingbench.cpp \
     dish.cpp \
     food.cpp \
@@ -19,6 +20,8 @@ SOURCES += \
     map.cpp \
     mapblock.cpp \
     orders.cpp \
+    plate.cpp \
+    pot.cpp \
     receiver.cpp \
     repository.cpp \
     scoreboard.cpp \
@@ -28,6 +31,7 @@ SOURCES += \
 
 HEADERS += \
     character.h \
+    choppingblock.h \
     cookingbench.h \
     dish.h \
     enums.h \
@@ -37,6 +41,8 @@ HEADERS += \
     map.h \
     mapblock.h \
     orders.h \
+    plate.h \
+    pot.h \
     receiver.h \
     repository.h \
     scoreboard.h \

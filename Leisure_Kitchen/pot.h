@@ -8,13 +8,14 @@ class Pot : public Item
 {
 public:
     Pot(int x, int y);
-    void clear();
-    bool put_food(Item* i);
-    Food* pour_food();
-    Food* ladle_out_food();
+    void interact(Item*& rThis, Item*& rAnother);
+    bool addFood(Food* f);
+    void cookFood();
+    bool isCooking();
+    Food*& food();
 private:
     QTimer* t;
-    Food* f;
+    Food* f = nullptr;
 
 };
 

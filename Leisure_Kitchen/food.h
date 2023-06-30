@@ -1,5 +1,6 @@
 #ifndef FOOD_H
 #define FOOD_H
+
 #include <enums.h>
 #include <item.h>
 
@@ -7,6 +8,7 @@ class Food : public Item
 {
 public:
     Food(FoodType t, int x, int y);
+    void interact(Item*& rThis, Item*& rAnother);
     bool operator<(const Food& another) const;
     bool operator==(const Food& another) const;
     FoodType type();

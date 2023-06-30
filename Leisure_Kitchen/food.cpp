@@ -1,4 +1,6 @@
 #include "food.h"
+#include <pot.h>
+#include <plate.h>
 
 Food::Food(FoodType t, int x, int y) : t(t), Item(FOOD, x, y)
 {
@@ -27,6 +29,24 @@ Food::Food(FoodType t, int x, int y) : t(t), Item(FOOD, x, y)
     case TOMATO:
         _isCut = false;
         _isCooked = true;
+        break;
+    default:
+        break;
+    }
+}
+
+void Food::interact(Item*& rThis, Item*& rAnother)
+{
+    switch (rAnother->type) {
+    case FOOD:
+        break;
+    case POT:
+        if (((Pot*)rAnother)->addFood(this));
+            rThis = nullptr;
+        break;
+    case PLATE:
+        if (((Plate*)rAnother)->addFood(this));
+            rThis = nullptr;
         break;
     default:
         break;

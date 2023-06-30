@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QTimer>
+
 #include <character.h>
 #include <enums.h>
 #include <orders.h>
@@ -21,27 +22,28 @@ class Game : public QMainWindow
     Q_OBJECT
 
 public:
-    Game(QWidget *parent = nullptr);
+    Game(QWidget *parent);
     ~Game();
-    void mainLoop();
-    void pause();
     void init();
-    bool is_Paused();
-protected:
+    //bool is_Paused();
+public slots:
+    void mainLoop();
     void keyPressEvent(QKeyEvent *e);
     void keyReleaseEvent(QKeyEvent *e);
-private slots:
-
+    void closeEvent(QCloseEvent* e);
 private:
     Ui::Game *ui;
     Character* c;
-    QWidget* start_window;
     QTimer* t;
     Orders* o;
     Map* m;
-    void closeEvent(QCloseEvent* e);
+    ScoreBoard* sb;
     bool isPaused = false;
     bool directionStatus[4] = {false};
+signals:
+    void gamePaused();
+    void gameResumed();
+    void gameClosed();
 };
 
 #endif // GAME_H

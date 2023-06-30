@@ -1,12 +1,15 @@
 #ifndef MAP_H
 #define MAP_H
-#include <enums.h>
-#include <mapblock.h>
-#include <map>
+
 #include <QJsonObject>
 #include <QJsonDocument>
+
+#include <map>
 #include <string>
 #include <fstream>
+
+#include <enums.h>
+#include <mapblock.h>
 
 class Map
 {
@@ -18,7 +21,7 @@ public:
 private:
     int w;
     int h;
-    std::map<std::pair<int, int>, MapBlock> map;
+    std::map<std::pair<int, int>, MapBlock*> map;
     QJsonDocument qjd;
 };
 

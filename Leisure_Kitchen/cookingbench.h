@@ -1,20 +1,20 @@
 #ifndef COOKINGBENCH_H
 #define COOKINGBENCH_H
 
-#include <mapblock.h>
 #include <QTimer>
-#include <item.h>
-#include <food.h>
+
+#include <mapblock.h>
 
 class CookingBench : public MapBlock
 {
 public:
     CookingBench(int x, int y, QWidget* parent);
+    void interact(Item*& i);
     //bool put_down(Item* i);
     //Item* pick_up();
     //void processFood();
 private:
-    Item* i;
+    Item* p;
     QTimer* t;
 };
 

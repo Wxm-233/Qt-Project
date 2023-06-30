@@ -5,8 +5,15 @@ Receiver::Receiver(int x, int y, Orders* o, QWidget* parent) : MapBlock(RECEIVER
 
 }
 
-void Receiver::receive(const std::vector<Food>& v)
+void Receiver::receive(const std::vector<Food*>& v)
 {
     o->receive(Dish(v));
 }
 
+void Receiver::interact(Item*& i)
+{
+    if (i != nullptr && i->type == PLATE) {
+        this->receive(((Plate*)i)->dish());
+    }
+    ((Plate*)(i))->clear();
+}

@@ -9,6 +9,7 @@ class Repository : public MapBlock
 public:
     Repository(FoodType t, int x, int y, QWidget* parent);
     FoodType type();
+    void interact(Item*& i);
 private:
     FoodType t;
 };

@@ -1,9 +1,10 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
+
 #include <QPicture>
 #include <QLabel>
-#include <string>
 
+#include <string>
 
 class ScoreBoard
 {

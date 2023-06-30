@@ -11,6 +11,11 @@ Map::Map()
     qjd.fromJson(qba);
 }
 
+void Map::addBlock()
+{
+
+}
+
 bool Map::isReachable(int x, int y)
 {
     return true;

@@ -10,7 +10,7 @@ enum Direction {
 
 enum BlockType {
     TABLE, TRASH_CAN, CHOPPING_BLOCK,
-    //桌子，垃圾桶
+    //桌子，垃圾桶，切菜桌
     RECEIVER, REPOSITORY, COOKING_BENCH
     //上菜处，食材仓库, 灶台
 };

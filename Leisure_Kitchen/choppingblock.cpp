@@ -2,10 +2,29 @@
 
 ChoppingBlock::ChoppingBlock(int x, int y, QWidget* parent) : MapBlock(CHOPPING_BLOCK, x, y, parent)
 {
-
+	t = new QTimer;
 }
 
-bool ChoppingBlock::put_food(Food *f)
+void ChoppingBlock::interact(Item*& i)
 {
-    return true;
+	if (i == nullptr) {
+		i = f;
+		f = nullptr;
+	}
+	else if (f == nullptr) {
+		if (i->type == FOOD) {
+			this->putFood((Food*)i);
+			i = nullptr;
+		}
+	}
+	else {
+		i->interact(i, f);
+	}
+		
+	
+}
+
+void ChoppingBlock::putFood(Food* food)
+{
+	f = food;
 }

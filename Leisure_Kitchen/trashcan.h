@@ -7,6 +7,7 @@ class TrashCan : public MapBlock
 {
 public:
     TrashCan(int x, int y, QWidget* parent);
+    void interact(Item*& i);
 private:
 
 };

@@ -1,12 +1,12 @@
 
 #include "character.h"
 
-Character::Character(QWidget *parent, int x, int y) : x(x), y(y)
+Character::Character(QWidget *parent, int x, int y) : x(x), y(y), facing(0), i(nullptr)
 {
-    img = new QImage(":/Pictures/assests/Pictures/test_Character.png");
+    //img = new QImage(":/Pictures/assests/Pictures/test_Character.png");
     picture = new QLabel(parent);
-    picture->resize(img->width(), img->height());
-    picture->setPixmap(QPixmap::fromImage(*img));
+    //picture->resize(img->width(), img->height());
+    //picture->setPixmap(QPixmap::fromImage(*img));
     picture->move(x - 50, y - 50);
     //picture->show();
 }
@@ -45,9 +45,16 @@ void Character::move(bool directionState[4], Map* m)
         facing = atan == 0 ? (x_dir > 0 ? 0 : PI) : ((atan > 0 ? atan : atan + PI) + (y_dir < 0 ? 0 : PI));
     }
 
-    std::clog << facing << std::endl;
+    //std::clog << facing << std::endl;
 
     picture->move(x, y);
+
+    if (i == nullptr)
+        return;
+
+    int itemx = x + w * (1 + std::cos(facing)) / 2;
+    int itemy = y + h * (1 - std::sin(facing)) / 2;
+    i->move(itemx, itemy);
 }
 
 void Character::dash(Map* m)
@@ -61,6 +68,13 @@ void Character::dash(Map* m)
     y = m->isReachable(x, new_y) ? new_y : y;
 
     picture->move(x, y);
+
+    if (i == nullptr)
+        return;
+
+    int itemx = x + w * (1 + std::cos(facing)) / 2;
+    int itemy = y + h * (1 - std::sin(facing)) / 2;
+    i->move(itemx, itemy);
 }
 
 void Character::pause()
@@ -80,65 +94,16 @@ void Character::interact(Map* m)
     MapBlock* mb = m->locate(dest_x, dest_y);
     if (mb == nullptr)
         return;
-    Table* tb = (Table*)mb;
-    ChoppingBlock* cpb = (ChoppingBlock*) mb;
-    switch ( mb->type())
-    {
-    case TABLE:
-
-        if (tb->isEmpty())
-        {
-            if (this->i != nullptr)
-            {
-                tb->put_down(this->i);
-                this->i = nullptr;
-            }
-        }
-        else
-        {
-            if (this->i == nullptr)
-            {
-                this->i = tb->pick_up();
-            }
-            else
-            {
-                Item* it = tb->getItem();
-                Pot* p = (Pot*)it;
-                Plate* plt = (Plate*)it;
-                switch (it->type)
-                {
-                case POT:
-
-                    if (p->put_food(this->i))
-                    {
-                        this->i = nullptr;
-                    }
-                    break;
-                case PLATE:
-
-                    if (plt->add_food(this->i))
-                    {
-                        this->i = nullptr;
-                    }
-                    break;
-                default:
-                    break;
-                }
-            }
-        }
-        break;
-    case CHOPPING_BLOCK:
-
-        if (this->i != nullptr && this->i->type == FOOD && !((Food*)this->i)->isCut())
-        {
-            cpb->put_food((Food*)(this->i));
-        }
-    }
 }
 
 //void Character::interact(int x, int y)
 //{
 
+//}
+
+//void Character::clearItem()
+//{
+//    this->i = nullptr;
 //}
 
 Character::~Character()

@@ -2,6 +2,7 @@
 #define START_WINDOW_H
 
 #include <QWidget>
+
 #include <game.h>
 
 namespace Ui {
@@ -13,7 +14,7 @@ class Start_Window : public QWidget
     Q_OBJECT
 
 public:
-    explicit Start_Window(QWidget *parent = nullptr);
+    Start_Window(QWidget *parent = nullptr);
     ~Start_Window();
 
 private slots:

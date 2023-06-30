@@ -9,8 +9,10 @@
 #include <QKeyEvent>
 #include <QImage>
 #include <QPixmap>
+
 #include <iostream>
 #include <cmath>
+
 #include <enums.h>
 #include <map.h>
 #include <table.h>
@@ -25,21 +27,22 @@ class Character : public QObject
 private:
     const static int speed = 10;
     QLabel *picture;
-    QImage *img;
-    int x, y;
-    int w, h;
-    double facing;
-    Item* i;
-    bool isPaused = false;
+    int x, y;//coordinate of the top left corner
+    int w, h;//in pixels
+    double facing;//an angle ranging from 0 to 2pi
+    Item* i;//the object in the character's hand
+    bool isPaused = false;//status of the character
 public:
-    Character(QWidget *parent = nullptr, int x = 0, int y = 0);
+    Character(QWidget *parent, int x, int y);//(x, y) is the coordinate of the top left corner
     ~Character();
-    void dash(Map* m);
+    void dash(Map* m);//m is from the parent Game class
     void move(bool directionState[4], Map* m);
+    //void interact(int x, int y);//mouse click event
+    void interact(Map* m);//when the player presses down the interact button
+
+public slots:
     void pause();
     void resume();
-    //void interact(int x, int y);
-    void interact(Map* m);
 signals:
 
 };

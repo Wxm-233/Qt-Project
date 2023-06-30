@@ -10,6 +10,11 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -34,11 +39,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>170</y>
-     <width>320</width>
-     <height>120</height>
+     <x>150</x>
+     <y>140</y>
+     <width>491</width>
+     <height>171</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Leisure Kitchen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

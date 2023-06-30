@@ -9,3 +9,10 @@ FoodType Repository::type()
 {
     return t;
 }
+
+void Repository::interact(Item*& i)
+{
+    if (i == nullptr) {
+        i = new Food(t, 0, 0);
+    }
+}

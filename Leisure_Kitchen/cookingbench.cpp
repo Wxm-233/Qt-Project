@@ -1,8 +1,25 @@
 #include "cookingbench.h"
 
-CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BENCH, x, y, parent), i(nullptr)
+CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BENCH, x, y, parent), p(nullptr)
 {
     t = new QTimer();
+}
+
+void CookingBench::interact(Item*& i)
+{
+    if (i == nullptr) {
+        i = p;
+        p = nullptr;
+    }
+    else if (p == nullptr) {
+        if (i->type == POT) {
+            p = i;
+            i = nullptr;
+        }
+    }
+    else {
+        i->interact(i, p);
+    }
 }
 
 //bool CookingBench::putItem(Item *i)

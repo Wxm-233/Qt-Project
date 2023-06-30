@@ -1,12 +1,16 @@
 #ifndef ORDERS_H
 #define ORDERS_H
-#include <vector>
+
+
 #include <QTimer>
-#include <dish.h>
-#include <random>
 #include <QWidget>
 #include <QMainWindow>
+
+#include <vector>
+#include <random>
+
 #include <scoreboard.h>
+#include <dish.h>
 
 namespace Ui {
 class Order;
@@ -14,18 +18,23 @@ class Order;
 
 class Orders : public QObject
 {
+    Q_OBJECT
+
 public:
-    Orders(QWidget *father, ScoreBoard* sb);
+    Orders(QWidget *father);
     void add();
-    void pause();
-    void resume();
-    void receive(const Dish& d);
+    
 private:
     std::vector<Dish> orders;
     QTimer* t;
     std::vector<Dish> available_dishes;
     QWidget* father;
-    ScoreBoard* sb;
+public slots:
+    void pause();
+    void resume();
+    void receive(const Dish& d);
+signals:
+    void addScore(int value);
 };
 
 #endif // ORDERS_H

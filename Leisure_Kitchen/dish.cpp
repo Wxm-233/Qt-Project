@@ -1,6 +1,6 @@
 #include "dish.h"
 
-Dish::Dish(const std::vector<Food>& f, int value) : _value(value)
+Dish::Dish(const std::vector<Food*>& f, int value) : _value(value)
 {
     for (auto &i : f)
     {
@@ -10,7 +10,16 @@ Dish::Dish(const std::vector<Food>& f, int value) : _value(value)
 
 bool Dish::operator==(const Dish& another) const
 {
-    return this->foods == another.foods;
+    if (this->foods.size() != another.foods.size())
+        return false;
+    auto it1 = this->foods.begin();
+    auto it2 = another.foods.begin();
+    while (it1 != this->foods.end()) {
+        if (!(**it1 == **it2))
+            return false;
+        it1++, it2++;
+    }
+    return true;
 }
 
 int Dish::value()

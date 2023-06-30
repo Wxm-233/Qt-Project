@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/build-Leisure_Kitchen-Desktop_x86_windows_msvc2022_pe_32bit-Debug
+/build-Leisure_Kitchen-Desktop_x86_windows_msvc2022_pe_32bit-Release
+/Leisure_Kitchen/.vs/Leisure_Kitchen
+/Leisure_Kitchen/debug
+/Leisure_Kitchen/release
+*.user
+*.sln
+*.vcxproj
+*.filters
+/Leisure_Kitchen/.qmake.stash

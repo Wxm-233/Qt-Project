@@ -4,10 +4,14 @@
 
 #include <QLabel>
 #include <QObject>
-#include <enums.h>
-#include <item.h>
 #include <QWidget>
 #include <QPicture>
+
+#include <enums.h>
+#include <item.h>
+#include <plate.h>
+#include <pot.h>
+#include <food.h>
 
 
 class MapBlock : public QObject
@@ -15,13 +19,13 @@ class MapBlock : public QObject
 public:
     MapBlock(BlockType t, int x, int y, QWidget* parent);
     BlockType type();
-//    Item* pick_up();
-//    bool put_down(Item* i);
 private:
     QLabel *picture;
-    int w, h;
-    int x, y;
+    int w, h;//in blocks
+    int x, y;//top left corner
     BlockType t;
+public slots:
+    virtual void interact(Item*& i) = 0;
 };
 
 #endif // MAPBLOCK_H

@@ -6,19 +6,25 @@
 Game::Game(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Game)
-    , start_window(parent)
 {
     ui->setupUi(this);
+
+    int cx = this->width() / 2;
+    int cy = this->height() * 5 / 8;
+    c = new Character(this, cx, cy);
+
     t = new QTimer(this);
-    connect(t, &QTimer::timeout, this, &Game::mainLoop);
+    QObject::connect(t, &QTimer::timeout, this, &Game::mainLoop);
     t->start(1000 / FPS);
 
+    //Orders* o = new Orders
 }
 
 Game::~Game()
 {
-    delete t;
     delete ui;
+    delete c;
+    delete t;
 }
 
 void Game::keyPressEvent(QKeyEvent *e)
@@ -27,8 +33,10 @@ void Game::keyPressEvent(QKeyEvent *e)
         return;
 
     switch (e->key()) {
-    case Qt::Key_Escape:
-        pause();
+    case Qt::Key_Space:
+        if (isPaused)
+            emit gamePaused();
+        else emit gameResumed();
         break;
     case Qt::Key_W:
         directionStatus[UP] = true;
@@ -76,38 +84,20 @@ void Game::keyReleaseEvent(QKeyEvent *e)
     }
 }
 
+void Game::closeEvent(QCloseEvent *e)
+{
+    emit gameClosed();
+    this->deleteLater();
+}
+
 void Game::mainLoop()
 {
     if (isPaused)
         return;
-
     c->move(directionStatus, m);
 }
 
-void Game::pause()
+void Game::init()//connect signals with slots
 {
-    isPaused = true;
-    c->pause();
-    o->pause();
-    QMessageBox::information(this, "PAUSED", "The game is paused.", QMessageBox::Ok);
-    c->resume();
-    o->resume();
-    isPaused = false;
-}
-
-void Game::closeEvent(QCloseEvent *e)
-{
-    start_window->show();
-}
-
-void Game::init()
-{
-    int x = this->width() / 2;
-    int y = this->height() * 5 / 8;
-    c = new Character(this, x, y);
-}
-
-bool Game::is_Paused()
-{
-    return isPaused;
+    
 }

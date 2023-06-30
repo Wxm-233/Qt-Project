@@ -17,8 +17,9 @@ Start_Window::~Start_Window()
 void Start_Window::on_pushButton_clicked()
 {
     game = new Game(this);
-    game->setFixedSize(1600, 900);
+    //game->setFixedSize(800, 600);
     game->init();
     this->hide();
+    QObject::connect(game, &Game::gameClosed, this, &QWidget::show);
     game->show();
 }

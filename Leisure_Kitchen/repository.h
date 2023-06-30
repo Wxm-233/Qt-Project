@@ -7,7 +7,7 @@
 class Repository : public MapBlock
 {
 public:
-    Repository(FoodType t, int x, int y);
+    Repository(FoodType t, int x, int y, QWidget* parent);
     FoodType type();
 private:
     FoodType t;

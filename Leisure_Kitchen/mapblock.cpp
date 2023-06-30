@@ -1,12 +1,13 @@
 
 #include "mapblock.h"
 
-MapBlock::MapBlock(BlockType t, int x, int y) : x(x), y(y), t(t)
+MapBlock::MapBlock(BlockType t, int x, int y, QWidget* parent) : x(x), y(y), t(t)
 {
     switch (t) {
     case TABLE:
         w = 1, h = 1;
-        //picture =
+        picture = new QLabel(parent);
+        //picture->setPicture();
         break;
     case TRASH_CAN:
         w = 1, h = 1;

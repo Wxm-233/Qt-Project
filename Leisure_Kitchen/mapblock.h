@@ -6,12 +6,14 @@
 #include <QObject>
 #include <enums.h>
 #include <item.h>
+#include <QWidget>
+#include <QPicture>
 
 
 class MapBlock : public QObject
 {
 public:
-    MapBlock(BlockType t, int x, int y);
+    MapBlock(BlockType t, int x, int y, QWidget* parent);
     BlockType type();
 //    Item* pick_up();
 //    bool put_down(Item* i);

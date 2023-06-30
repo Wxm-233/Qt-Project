@@ -6,7 +6,7 @@
 class Table : public MapBlock
 {
 public:
-    Table(Item* i, int x, int y);
+    Table(Item* i, int x, int y, QWidget* parent);
     Item* pick_up();
     bool put_down(Item* i);
     bool isEmpty();

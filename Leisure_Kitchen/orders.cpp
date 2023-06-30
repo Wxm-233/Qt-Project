@@ -12,6 +12,7 @@ void Orders::add()
     if (orders.size() > 6)
         return;
     orders.push_back(available_dishes[std::rand() % available_dishes.size()]);
+
 }
 
 void Orders::pause()

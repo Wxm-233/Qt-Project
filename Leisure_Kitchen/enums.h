@@ -2,6 +2,8 @@
 #ifndef ENUMS_H
 #define ENUMS_H
 
+#include <QImage>
+
 enum Direction {
     UP, DOWN, LEFT, RIGHT
 };
@@ -24,6 +26,32 @@ enum ItemType {
 constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
 constexpr int PixelsPerBlock = 100;
+
+namespace GamePics {
+extern QImage* Table;
+extern QImage* TrashCan;
+extern QImage* ChoppingBlock;
+extern QImage* Receiver;
+extern QImage* Repository;
+extern QImage* CookingBench;
+extern QImage* Fish;
+extern QImage* Fish_Cut;
+extern QImage* Rice_Raw;
+extern QImage* Rice_Cooked;
+extern QImage* HaiTai;
+extern QImage* Cucumber;
+extern QImage* Cucumber_Cut;
+extern QImage* Cabbage;
+extern QImage* Cabbage_Cut;
+extern QImage* Tomato;
+extern QImage* Tomato_Cut;
+extern QImage* Pot;
+extern QImage* Plate;
+extern QImage* Cook1;
+extern QImage* Cook2;
+extern QImage* BackGround;
+extern QImage* Coin;
+}
 
 //enum Cooking_Bench_Type {
 //    WOK, FRYER, SAUCEPAN

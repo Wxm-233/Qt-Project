@@ -7,7 +7,7 @@
 class ChoppingBlock : public MapBlock
 {
 public:
-    ChoppingBlock(int x, int y);
+    ChoppingBlock(int x, int y, QWidget* parent);
     bool put_food(Food *f);
 private:
     QTimer* t;

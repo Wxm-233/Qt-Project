@@ -9,7 +9,7 @@
 class CookingBench : public MapBlock
 {
 public:
-    CookingBench(int x, int y);
+    CookingBench(int x, int y, QWidget* parent);
     //bool put_down(Item* i);
     //Item* pick_up();
     //void processFood();

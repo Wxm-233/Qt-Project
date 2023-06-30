@@ -1,6 +1,6 @@
 #include "receiver.h"
 
-Receiver::Receiver(int x, int y, Orders* o) : MapBlock(RECEIVER, x, y), o(o)
+Receiver::Receiver(int x, int y, Orders* o, QWidget* parent) : MapBlock(RECEIVER, x, y, parent), o(o)
 {
 
 }

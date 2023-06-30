@@ -8,6 +8,10 @@
 #include <QMainWindow>
 #include <scoreboard.h>
 
+namespace Ui {
+class Order;
+}
+
 class Orders : public QObject
 {
 public:

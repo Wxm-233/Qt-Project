@@ -9,7 +9,7 @@
 class Receiver : public MapBlock
 {
 public:
-    Receiver(int x, int y, Orders* o);
+    Receiver(int x, int y, Orders* o, QWidget* parent);
     void receive(const std::vector<Food>& v);
 private:
     Orders* o;

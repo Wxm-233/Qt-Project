@@ -1,6 +1,6 @@
 #include "table.h"
 
-Table::Table(Item* i, int x, int y) : i(i), MapBlock(TABLE, x, y)
+Table::Table(Item* i, int x, int y, QWidget* parent) : i(i), MapBlock(TABLE, x, y, parent)
 {
 
 }

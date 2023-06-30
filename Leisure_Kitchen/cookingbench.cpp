@@ -1,6 +1,6 @@
 #include "cookingbench.h"
 
-CookingBench::CookingBench(int x, int y) : MapBlock(COOKING_BENCH, x, y), i(nullptr)
+CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BENCH, x, y, parent), i(nullptr)
 {
     t = new QTimer();
 }

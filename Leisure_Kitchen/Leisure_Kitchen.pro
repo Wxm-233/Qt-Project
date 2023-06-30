@@ -14,6 +14,7 @@ SOURCES += \
     cookingbench.cpp \
     dish.cpp \
     food.cpp \
+    globalFuns.cpp \
     item.cpp \
     main.cpp \
     game.cpp \

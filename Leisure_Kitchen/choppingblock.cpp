@@ -1,6 +1,6 @@
 #include "choppingblock.h"
 
-ChoppingBlock::ChoppingBlock(int x, int y) : MapBlock(CHOPPING_BLOCK, x, y)
+ChoppingBlock::ChoppingBlock(int x, int y, QWidget* parent) : MapBlock(CHOPPING_BLOCK, x, y, parent)
 {
 
 }

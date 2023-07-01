@@ -4,15 +4,23 @@
 
 Pot::Pot(int x, int y) : Item(POT, x, y)
 {
-
+    t = new QTimer;
 }
 
-bool Pot::addFood(Food *f)
+void Pot::addFood(Item*& f)
 {
-    return true;
+    if (this->f != nullptr || f == nullptr || f->type != FOOD)
+        return;
+    if (((Food*)f)->isCooked())
+        return;
+    this->f = (Food*)f;
+    t->singleShot(10000, this, &Pot::cookFood);
+    t->start();
+    _isCooking = true;
+    f = nullptr;
 }
 
-Food*& Pot::food()
+Item*& Pot::food()
 {
     return f;
 }
@@ -21,13 +29,10 @@ void Pot::interact(Item*& rThis, Item*& rAnother)
 {
     switch (rAnother->type) {
     case FOOD:
-        if (this->f != nullptr)
-            break;
-        this->addFood((Food*)rAnother);
-        rAnother = nullptr;
+        this->addFood(rAnother);
         break;
     case PLATE:
-        if (this->f == nullptr || this->isCooking())
+        if (this->isCooking())
             break;
         ((Plate*)rAnother)->addFood(this->f);
         this->f = nullptr;
@@ -41,10 +46,13 @@ void Pot::interact(Item*& rThis, Item*& rAnother)
 
 void Pot::cookFood()
 {
-
+    if (f == nullptr || f->type != FOOD)
+        return;
+    ((Food*)f)->cook();
+    _isCooking = false;
 }
 
 bool Pot::isCooking()
 {
-    return false;
+    return _isCooking;
 }

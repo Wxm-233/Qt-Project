@@ -22,7 +22,7 @@ public:
 private:
     QLabel *picture;
     int w, h;//in blocks
-    int x, y;//top left corner
+    int x, y;//top left corner, in blocks
     BlockType t;
 public slots:
     virtual void interact(Item*& i) = 0;

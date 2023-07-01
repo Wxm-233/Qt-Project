@@ -12,9 +12,6 @@
 #include <scoreboard.h>
 #include <dish.h>
 
-namespace Ui {
-class Order;
-}
 
 class Orders : public QObject
 {

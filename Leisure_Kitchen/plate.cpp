@@ -7,12 +7,12 @@ Plate::Plate(int x, int y) : Item(PLATE, x, y)
 
 }
 
-bool Plate::addFood(Food *f)
+void Plate::addFood(Item*& f)
 {
-    if (foods.size() > 4)
-        return false;
-    else foods.push_back(f);
-    return true;
+    if (f == nullptr || f->type != FOOD || foods.size() > 4)
+        return;
+    foods.push_back((Food*)f);
+    f = nullptr;
 }
 
 void Plate::clear()
@@ -26,14 +26,12 @@ void Plate::interact(Item*& rThis, Item*& rAnother)
 {
     switch (rAnother->type) {
     case FOOD:
-        this->addFood((Food*)rAnother);
-        rAnother = nullptr;
+        this->addFood(rAnother);
         break;
     case POT:
-        if (((Pot*)rAnother)->isCooking() || ((Pot*)rAnother)->food() == nullptr)
+        if (((Pot*)rAnother)->isCooking())
             break;
-        if (this->addFood(((Pot*)rAnother)->food()))
-            ((Pot*)rAnother)->food() = nullptr;
+        this->addFood(((Pot*)rAnother)->food());
         break;
     case PLATE:
         break;

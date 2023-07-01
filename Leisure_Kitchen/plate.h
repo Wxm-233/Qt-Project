@@ -10,7 +10,7 @@ class Plate : public Item
 {
 public:
     Plate(int x, int y);
-    bool addFood(Food* f);
+    void addFood(Item*& f);
     void interact(Item*& rThis, Item*& rAnother);
     void clear();
     const std::vector<Food*>& dish();

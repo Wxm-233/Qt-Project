@@ -1,6 +1,8 @@
 #ifndef POT_H
 #define POT_H
 
+#include <QTimer>
+
 #include "item.h"
 #include <food.h>
 
@@ -9,14 +11,15 @@ class Pot : public Item
 public:
     Pot(int x, int y);
     void interact(Item*& rThis, Item*& rAnother);
-    bool addFood(Food* f);
-    void cookFood();
+    void addFood(Item*& f);
     bool isCooking();
-    Food*& food();
+    Item*& food();
 private:
     QTimer* t;
-    Food* f = nullptr;
-
+    Item* f = nullptr;
+    bool _isCooking = false;
+public slots:
+    void cookFood();
 };
 
 #endif // POT_H

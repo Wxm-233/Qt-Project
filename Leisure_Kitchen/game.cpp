@@ -99,5 +99,5 @@ void Game::mainLoop()
 
 void Game::init()//connect signals with slots
 {
-    
+    connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
 }

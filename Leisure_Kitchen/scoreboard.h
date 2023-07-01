@@ -6,15 +6,17 @@
 
 #include <string>
 
-class ScoreBoard
+class ScoreBoard : public QObject
 {
+    Q_OBJECT
+
 public:
     ScoreBoard(QWidget* parent);
-    void addScore(int dScore);
-
 private:
     int score;
     QLabel* label;
+public slots:
+    void addScore(int dScore);
 };
 
 #endif // SCOREBOARD_H

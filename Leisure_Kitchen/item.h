@@ -3,11 +3,14 @@
 
 #include <QPicture>
 #include <QLabel>
+#include <QObject>
 
 #include <enums.h>
 
-class Item
+class Item : public QObject
 {
+    Q_OBJECT
+
 public:
     Item(ItemType, int x, int y);
     ~Item();

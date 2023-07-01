@@ -41,12 +41,10 @@ void Food::interact(Item*& rThis, Item*& rAnother)
     case FOOD:
         break;
     case POT:
-        if (((Pot*)rAnother)->addFood(this));
-            rThis = nullptr;
+        ((Pot*)rAnother)->addFood(rThis);
         break;
     case PLATE:
-        if (((Plate*)rAnother)->addFood(this));
-            rThis = nullptr;
+        ((Plate*)rAnother)->addFood(rThis);
         break;
     default:
         break;

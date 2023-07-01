@@ -27,6 +27,8 @@ constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
 constexpr int PixelsPerBlock = 100;
 
+void InitPics();
+
 namespace GamePics {
 extern QImage* Table;
 extern QImage* TrashCan;

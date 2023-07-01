@@ -12,3 +12,7 @@
 *.vcxproj
 *.filters
 /Leisure_Kitchen/.qmake.stash
+.DS_Store
+/build-*
+/build-Leisure_Kitchen-Qt_6_5_1_for_macOS-Debug
+

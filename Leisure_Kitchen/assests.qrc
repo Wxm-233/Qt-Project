@@ -1,6 +1,29 @@
 <RCC>
     <qresource prefix="/Pictures">
         <file>assests/Pictures/test_Character.png</file>
+        <file>assests/Pictures/BackGround.jpg</file>
+        <file>assests/Pictures/Cabbage_Cut.png</file>
+        <file>assests/Pictures/Cabbage.png</file>
+        <file>assests/Pictures/ChoppingBlock.png</file>
+        <file>assests/Pictures/Coin.png</file>
+        <file>assests/Pictures/Cook1.png</file>
+        <file>assests/Pictures/Cook2.png</file>
+        <file>assests/Pictures/CookingBench.png</file>
+        <file>assests/Pictures/Cucumber_Cut.png</file>
+        <file>assests/Pictures/Cucumber.png</file>
+        <file>assests/Pictures/Fish_Cut.png</file>
+        <file>assests/Pictures/Fish.png</file>
+        <file>assests/Pictures/Haitai.png</file>
+        <file>assests/Pictures/Plate.png</file>
+        <file>assests/Pictures/Pot.png</file>
+        <file>assests/Pictures/Recevier.png</file>
+        <file>assests/Pictures/Repository.png</file>
+        <file>assests/Pictures/Rice_Cooked.png</file>
+        <file>assests/Pictures/Rice_Raw.png</file>
+        <file>assests/Pictures/Table.jpg</file>
+        <file>assests/Pictures/Tomato_Cut.png</file>
+        <file>assests/Pictures/Tomato.png</file>
+        <file>assests/Pictures/TrashCan.png</file>
     </qresource>
     <qresource prefix="/Audios"/>
     <qresource prefix="/MapResources">

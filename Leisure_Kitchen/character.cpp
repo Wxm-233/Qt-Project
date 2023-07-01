@@ -1,11 +1,13 @@
-
+#include <enums.h>
 #include "character.h"
 
 Character::Character(QWidget *parent, int x, int y) : x(x), y(y), facing(0), i(nullptr)
 {
     //img = new QImage(":/Pictures/assests/Pictures/test_Character.png");
     picture = new QLabel(parent);
-    //picture->resize(img->width(), img->height());
+    picture->setPixmap(QPixmap::fromImage(*GamePics::Cook1));
+    picture->resize(GamePics::Cook1->width(), GamePics::Cook1->height());
+    //picture->resize(60, 60);
     //picture->setPixmap(QPixmap::fromImage(*img));
     picture->move(x - 50, y - 50);
     //picture->show();

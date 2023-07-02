@@ -90,6 +90,12 @@ void Game::closeEvent(QCloseEvent *e)
     this->deleteLater();
 }
 
+void Game::cFacingChange(double newFacing)
+{
+
+    //emit cFacingChanged(QString::fromStdString("newFacing" + std::to_string(newFacing)));
+}
+
 void Game::mainLoop()
 {
     if (isPaused)

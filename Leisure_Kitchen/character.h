@@ -9,6 +9,7 @@
 #include <QKeyEvent>
 #include <QImage>
 #include <QPixmap>
+#include <QTransform>
 
 #include <iostream>
 #include <cmath>
@@ -26,7 +27,9 @@ class Character : public QObject
     Q_OBJECT
 private:
     const static int speed = 10;
+    QImage *image;
     QLabel *picture;
+    QTransform* qtf;
     int x, y;//coordinate of the top left corner
     int w, h;//in pixels
     double facing;//an angle ranging from 0 to 2pi
@@ -39,12 +42,11 @@ public:
     void move(bool directionState[4], Map* m);
     //void interact(int x, int y);//mouse click event
     void interact(Map* m);//when the player presses down the interact button
-
 public slots:
     void pause();
     void resume();
 signals:
-
+    void facing_changed(double currentFacing);
 };
 
 #endif // CHARACTER_H

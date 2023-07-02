@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/Pictures">
-        <file>assests/Pictures/test_Character.png</file>
         <file>assests/Pictures/BackGround.jpg</file>
         <file>assests/Pictures/Cabbage_Cut.png</file>
         <file>assests/Pictures/Cabbage.png</file>

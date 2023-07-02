@@ -7,11 +7,12 @@ Character::Character(QWidget *parent, int x, int y) : x(x), y(y), facing(0), i(n
     image = new QImage(*GamePics::Cook1);
     picture = new QLabel(parent);
     picture->setPixmap(QPixmap::fromImage(*image));
-    picture->resize(GamePics::Cook1->width(), GamePics::Cook1->height());
+    picture->resize(image->width(), image->height());
     qtf = new QTransform;
     //picture->resize(60, 60);
     //picture->setPixmap(QPixmap::fromImage(*img));
     picture->move(x - 50, y - 50);
+    facing = PI*3/2;
     //picture->show();
 }
 
@@ -52,9 +53,12 @@ void Character::move(bool directionState[4], Map* m)
     }
 
     if (newFacing != facing) {
-        emit facing_changed(newFacing);
         qtf->rotate((facing - newFacing) / PI * 180);
-        *image = image->transformed(*qtf);
+        std::clog << "dtheta:" << (facing - newFacing) / PI * 180 << std::endl;
+//        std::clog << qtf->m11() << ' ' << qtf->m12() << ' ' << qtf->m13() << std::endl
+//            << qtf->m21() << ' ' << qtf->m22() << ' ' << qtf->m23() << std::endl
+//            << qtf->m31() << ' ' << qtf->m32() << ' ' << qtf->m33() << std::endl << std::endl;
+        *image = GamePics::Cook1->transformed(*qtf);
         picture->setPixmap(QPixmap::fromImage(*image));
         picture->resize(image->width(), image->height());
     }

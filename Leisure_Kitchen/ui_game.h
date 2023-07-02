@@ -11,9 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,8 +21,7 @@ class Ui_Game
 {
 public:
     QWidget *centralwidget;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QLabel *label;
 
     void setupUi(QMainWindow *Game)
     {
@@ -32,14 +30,10 @@ public:
         Game->resize(800, 600);
         centralwidget = new QWidget(Game);
         centralwidget->setObjectName("centralwidget");
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(-187, 0, 1074, 600));
         Game->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(Game);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
-        Game->setMenuBar(menubar);
-        statusbar = new QStatusBar(Game);
-        statusbar->setObjectName("statusbar");
-        Game->setStatusBar(statusbar);
 
         retranslateUi(Game);
 
@@ -49,6 +43,7 @@ public:
     void retranslateUi(QMainWindow *Game)
     {
         Game->setWindowTitle(QCoreApplication::translate("Game", "Game", nullptr));
+        label->setText(QCoreApplication::translate("Game", "<html><head/><body><p><img src=\":/Pictures/assests/Pictures/BackGround.jpg\"/></p></body></html>", nullptr));
     } // retranslateUi
 
 };

@@ -17,7 +17,10 @@ Game::Game(QWidget *parent)
     QObject::connect(t, &QTimer::timeout, this, &Game::mainLoop);
     t->start(1000 / FPS);
 
-    //Orders* o = new Orders
+    //o = new Orders(this);
+    sb = new ScoreBoard(this);
+    m = new Map();
+    //connect(c, &Character::facing_changed, this, &Game::cFacingChange);
 }
 
 Game::~Game()
@@ -25,6 +28,8 @@ Game::~Game()
     delete ui;
     delete c;
     delete t;
+    delete sb;
+    delete m;
 }
 
 void Game::keyPressEvent(QKeyEvent *e)
@@ -36,7 +41,11 @@ void Game::keyPressEvent(QKeyEvent *e)
     case Qt::Key_Space:
         if (isPaused)
             emit gamePaused();
-        else emit gameResumed();
+        else {
+            for (auto& i : directionStatus)
+                i = false;
+            emit gameResumed();
+        }
         break;
     case Qt::Key_W:
         directionStatus[UP] = true;
@@ -90,11 +99,11 @@ void Game::closeEvent(QCloseEvent *e)
     this->deleteLater();
 }
 
-void Game::cFacingChange(double newFacing)
-{
-
-    //emit cFacingChanged(QString::fromStdString("newFacing" + std::to_string(newFacing)));
-}
+//void Game::cFacingChange(double newFacing)
+//{
+//    ui->Facing->setText(QString("Facing:%1").arg(newFacing));
+//    //emit cFacingChanged(QString::fromStdString("newFacing" + std::to_string(newFacing)));
+//}
 
 void Game::mainLoop()
 {
@@ -105,5 +114,5 @@ void Game::mainLoop()
 
 void Game::init()//connect signals with slots
 {
-    connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
+    //connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
 }

@@ -31,7 +31,6 @@ public slots:
     void keyPressEvent(QKeyEvent *e);
     void keyReleaseEvent(QKeyEvent *e);
     void closeEvent(QCloseEvent* e);
-    void cFacingChange(double newFacing);
 private:
     Ui::Game *ui;
     Character* c;
@@ -45,7 +44,6 @@ signals:
     void gamePaused();
     void gameResumed();
     void gameClosed();
-    void cFacingChanged(QString qs);
 };
 
 #endif // GAME_H

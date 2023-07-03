@@ -4,7 +4,8 @@
 #include <vector>
 
 #include "item.h"
-#include <food.h>
+
+class Food;
 
 class Plate : public Item
 {

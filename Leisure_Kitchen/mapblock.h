@@ -14,7 +14,7 @@
 #include <food.h>
 
 
-class MapBlock : public QObject
+class MapBlock
 {
 public:
     MapBlock(BlockType t, int x, int y, QWidget* parent);

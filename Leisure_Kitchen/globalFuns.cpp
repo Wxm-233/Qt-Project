@@ -53,3 +53,14 @@ void InitPics()
     GamePics::BackGround = new QImage(":/Pictures/assests/Pictures/BackGround.jpg");
     GamePics::Coin = new QImage(":/Pictures/assests/Pictures/Coin.png");
 }
+
+//not written yet
+std::pair<int, int> pixel2Block(int x, int y)
+{
+    return { x, y };
+}
+
+std::pair<int, int> block2Pixel(int x, int y)
+{
+    return { x, y };
+}

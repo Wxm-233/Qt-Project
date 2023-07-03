@@ -4,7 +4,6 @@
 #include <QTimer>
 
 #include "item.h"
-#include <food.h>
 
 class Pot : public Item
 {

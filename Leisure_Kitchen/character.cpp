@@ -66,6 +66,7 @@ void Character::move(bool directionState[4], Map* m)
 
 
     //std::clog << facing << std::endl;
+    //qDebug() << facing;
     facing = newFacing;
 
     picture->move(x, y);

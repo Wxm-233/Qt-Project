@@ -7,11 +7,11 @@
     },
     "1, 6": {
         "BlockType": "TrashCan"
-    }
+    },
     "2, 1": {
         "BlockType": "Table",
         "ItemType": "Plate"
-    }
+    },
     "2, 6": {
         "BlockType": "CookingBench",
         "ItemType": "Pot"

@@ -3,6 +3,7 @@
 #define ENUMS_H
 
 #include <QImage>
+#include <utility>
 
 enum Direction {
     UP, DOWN, LEFT, RIGHT
@@ -28,6 +29,8 @@ constexpr int FPS = 60;
 constexpr int PixelsPerBlock = 100;
 
 void InitPics();
+std::pair<int, int> pixel2Block(int x, int y);
+std::pair<int, int> block2Pixel(int x, int y);
 
 namespace GamePics {
 extern QImage* Table;

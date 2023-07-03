@@ -9,7 +9,6 @@
 #include <vector>
 #include <random>
 
-#include <scoreboard.h>
 #include <dish.h>
 
 

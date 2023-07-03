@@ -17,9 +17,9 @@ Game::Game(QWidget *parent)
     QObject::connect(t, &QTimer::timeout, this, &Game::mainLoop);
     t->start(1000 / FPS);
 
-    //o = new Orders(this);
+    o = new Orders(this);
     sb = new ScoreBoard(this);
-    m = new Map();
+    m = new Map(this);
     //connect(c, &Character::facing_changed, this, &Game::cFacingChange);
 }
 
@@ -114,5 +114,6 @@ void Game::mainLoop()
 
 void Game::init()//connect signals with slots
 {
-    //connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
+    connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
+    connect(m, &Map::receiveDish, o, &Orders::receive);
 }

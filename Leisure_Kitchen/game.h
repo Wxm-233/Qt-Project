@@ -10,6 +10,7 @@
 #include <enums.h>
 #include <orders.h>
 #include <map.h>
+#include <scoreboard.h>
 
 
 QT_BEGIN_NAMESPACE

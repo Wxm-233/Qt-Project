@@ -4,19 +4,19 @@
 #include <vector>
 
 #include <mapblock.h>
-#include <orders.h>
 #include <dish.h>
 #include <food.h>
 
+class Map;
 
 class Receiver : public MapBlock
 {
 public:
-    Receiver(int x, int y, Orders* o, QWidget* parent);
+    Receiver(int x, int y, Map* m, QWidget* parent);
     void receive(const std::vector<Food*>& v);
     void interact(Item*& i);
 private:
-    Orders* o;
+    Map* m;
 };
 
 #endif // RECEIVER_H

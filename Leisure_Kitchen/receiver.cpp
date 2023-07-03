@@ -1,13 +1,14 @@
 #include "receiver.h"
+#include <map.h>
 
-Receiver::Receiver(int x, int y, Orders* o, QWidget* parent) : MapBlock(RECEIVER, x, y, parent), o(o)
+Receiver::Receiver(int x, int y, Map* m, QWidget* parent) : MapBlock(RECEIVER, x, y, parent)
 {
 
 }
 
 void Receiver::receive(const std::vector<Food*>& v)
 {
-    o->receive(Dish(v));
+    //m->receive(Dish(v));
 }
 
 void Receiver::interact(Item*& i)

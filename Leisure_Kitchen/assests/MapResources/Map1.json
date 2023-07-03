@@ -1,0 +1,56 @@
+{
+    "1, 1": {
+        "BlockType": "ChoppingBlock"
+    },
+    "1, 3": {
+        "BlockType": "Receiver"
+    },
+    "1, 6": {
+        "BlockType": "TrashCan"
+    }
+    "2, 1": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    }
+    "2, 6": {
+        "BlockType": "CookingBench",
+        "ItemType": "Pot"
+    },
+    "3, 1": {
+        "BlockType": "Repository",
+        "FoodType": "Rice"
+    },
+    "3, 3": {
+        "BlockType": "Table"
+    },
+    "3, 4": {
+        "BlockType": "Table"
+    },
+    "3, 6": {
+        "BlockType": "Repository",
+        "FoodType": "Fish"
+    },
+    "4, 1": {
+        "BlockType": "Repository",
+        "FoodType": "Tomato"
+    },
+    "4, 6": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "5, 1": {
+        "BlockType": "Repository",
+        "FoodType": "HaiTai"
+    },
+    "5, 3": {
+        "BlockType": "Repository",
+        "FoodType": "Cucumber"
+    },
+    "5, 4": {
+        "BlockType": "ChoppingBlock"
+    },
+    "5, 6": {
+        "BlockType": "Repository",
+        "FoodType": "Cabbage"
+    }
+}

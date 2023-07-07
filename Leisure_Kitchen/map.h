@@ -5,6 +5,7 @@
 #include <QJsonDocument>
 #include <QString>
 #include <QObject>
+#include <QFile>
 
 #include <map>
 #include <string>
@@ -29,8 +30,6 @@ public:
     void receive(const Dish& d);
 private:
     QWidget* parent;
-    int w;
-    int h;
     std::map<std::pair<int, int>, MapBlock*> map;
     QJsonDocument qjd;
 signals:

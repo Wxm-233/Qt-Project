@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1141</width>
     <height>600</height>
    </rect>
   </property>
@@ -21,15 +21,16 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>265</x>
-     <y>330</y>
-     <width>270</width>
-     <height>90</height>
+     <x>410</x>
+     <y>340</y>
+     <width>301</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <family>Comic Sans MS</family>
+     <pointsize>28</pointsize>
     </font>
    </property>
    <property name="text">
@@ -39,14 +40,15 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>300</x>
      <y>140</y>
-     <width>491</width>
-     <height>171</height>
+     <width>521</width>
+     <height>181</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <family>Comic Sans MS</family>
      <pointsize>9</pointsize>
     </font>
    </property>
@@ -54,6 +56,22 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Leisure Kitchen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>0</y>
+     <width>1151</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/Pictures/assets/Pictures/startBG.jpg);</string>
+   </property>
+  </widget>
+  <zorder>graphicsView</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>

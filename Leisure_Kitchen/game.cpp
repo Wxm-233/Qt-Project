@@ -20,6 +20,7 @@ Game::Game(QWidget *parent)
     o = new Orders(this);
     sb = new ScoreBoard(this);
     m = new Map(this);
+    m->init();
     //connect(c, &Character::facing_changed, this, &Game::cFacingChange);
 }
 

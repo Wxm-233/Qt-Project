@@ -29,29 +29,29 @@ QImage* Coin;
 
 void InitPics()
 {
-    GamePics::Table = new QImage(":/Pictures/assests/Pictures/Table.jpg");
-    GamePics::TrashCan = new QImage(":/Pictures/assests/Pictures/Trashcan.jpg");
-    GamePics::ChoppingBlock = new QImage(":/Pictures/assests/Pictrues/ChoppingBlock.png");
-    GamePics::Receiver = new QImage(":/Pictures/assests/Pictrues/Receiver.png");
-    GamePics::Repository = new QImage(":/Pictures/assests/Pictrues/Repository.png");
-    GamePics::CookingBench = new QImage(":/Pictures/assests/Pictrues/CookingBench.png");
-    GamePics::Fish = new QImage(":/Pictures/assests/Pictrues/Fish.png");
-    GamePics::Fish_Cut = new QImage(":/Pictures/assests/Pictrues/Fish_Cut.png");
-    GamePics::Rice_Raw = new QImage(":/Pictures/assests/Pictrues/Rice_Raw.png");
-    GamePics::Rice_Cooked = new QImage(":/Pictures/assests/Pictrues/Rice_Cooked.png");
-    GamePics::HaiTai = new QImage(":/Pictures/assests/Pictrues/HaiTai.png");
-    GamePics::Cucumber = new QImage(":/Pictures/assests/Pictrues/Cucumber.png");
-    GamePics::Cucumber_Cut = new QImage(":/Pictures/assests/Pictures/Cucumber_Cut.png");
-    GamePics::Cabbage = new QImage(":/Pictures/assests/Pictures/Cabbage.png");
-    GamePics::Cabbage_Cut = new QImage(":/Pictures/assests/Pictures/Cabbage_Cut.png");
-    GamePics::Tomato = new QImage(":/Pictures/assests/Pictures/Tomato.png");
-    GamePics::Tomato_Cut = new QImage(":/Pictures/assests/Pictures/Tomato_Cut.png");
-    GamePics::Pot = new QImage(":/Pictures/assests/Pictures/Pot.png");
-    GamePics::Plate = new QImage(":/Pictures/assests/Pictures/Plate.png");
-    GamePics::Cook1 = new QImage(":/Pictures/assests/Pictures/Cook1.png");
-    GamePics::Cook2 = new QImage(":/Pictures/assests/Pictures/Cook2.png");
-    GamePics::BackGround = new QImage(":/Pictures/assests/Pictures/BackGround.jpg");
-    GamePics::Coin = new QImage(":/Pictures/assests/Pictures/Coin.png");
+    GamePics::Table = new QImage(":/Pictures/assets/Pictures/Table.jpg");
+    GamePics::TrashCan = new QImage(":/Pictures/assets/Pictures/Trashcan.jpg");
+    GamePics::ChoppingBlock = new QImage(":/Pictures/assets/Pictrues/ChoppingBlock.png");
+    GamePics::Receiver = new QImage(":/Pictures/assets/Pictrues/Receiver.png");
+    GamePics::Repository = new QImage(":/Pictures/assets/Pictrues/Repository.png");
+    GamePics::CookingBench = new QImage(":/Pictures/assets/Pictrues/CookingBench.png");
+    GamePics::Fish = new QImage(":/Pictures/assets/Pictrues/Fish.png");
+    GamePics::Fish_Cut = new QImage(":/Pictures/assets/Pictrues/Fish_Cut.png");
+    GamePics::Rice_Raw = new QImage(":/Pictures/assets/Pictrues/Rice_Raw.png");
+    GamePics::Rice_Cooked = new QImage(":/Pictures/assets/Pictrues/Rice_Cooked.png");
+    GamePics::HaiTai = new QImage(":/Pictures/assets/Pictrues/HaiTai.png");
+    GamePics::Cucumber = new QImage(":/Pictures/assets/Pictrues/Cucumber.png");
+    GamePics::Cucumber_Cut = new QImage(":/Pictures/assets/Pictures/Cucumber_Cut.png");
+    GamePics::Cabbage = new QImage(":/Pictures/assets/Pictures/Cabbage.png");
+    GamePics::Cabbage_Cut = new QImage(":/Pictures/assets/Pictures/Cabbage_Cut.png");
+    GamePics::Tomato = new QImage(":/Pictures/assets/Pictures/Tomato.png");
+    GamePics::Tomato_Cut = new QImage(":/Pictures/assets/Pictures/Tomato_Cut.png");
+    GamePics::Pot = new QImage(":/Pictures/assets/Pictures/Pot.png");
+    GamePics::Plate = new QImage(":/Pictures/assets/Pictures/Plate.png");
+    GamePics::Cook1 = new QImage(":/Pictures/assets/Pictures/Cook1.png");
+    GamePics::Cook2 = new QImage(":/Pictures/assets/Pictures/Cook2.png");
+    GamePics::BackGround = new QImage(":/Pictures/assets/Pictures/BackGround.jpg");
+    GamePics::Coin = new QImage(":/Pictures/assets/Pictures/Coin.png");
 }
 
 //not written yet

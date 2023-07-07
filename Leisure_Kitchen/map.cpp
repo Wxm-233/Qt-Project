@@ -45,14 +45,11 @@ MapBlock* Map::locate(int x, int y)
 
 void Map::init()
 {
-    QByteArray qba;
-    std::fstream f;
-    f.open(":/MapResources/assests/MapResources/Map1");
-    std::string s;
-    f >> s;
-    f.close();
-    qba.fromStdString(s);
-    qjd.fromJson(qba);
+    QFile map1(":/MapResources/assets/MapResources/Map1.json");
+    map1.open(QIODevice::ReadOnly);
+    QByteArray qba = map1.readAll();
+    QJsonDocument qjd = QJsonDocument::fromJson(qba);
+
     QJsonObject qjo = qjd.object();
     for (auto&& i = qjo.constBegin(); i != qjo.constEnd(); i++) {
         QString loc = i.key();

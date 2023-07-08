@@ -8,6 +8,10 @@ Table::Table(Item* i, int x, int y, QWidget* parent) : MapBlock(TABLE, x, y, par
     picture->resize(PixelsPerBlock,PixelsPerBlock);
     std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
     picture->move(pos.first, pos.second);
+
+    if (i == nullptr)
+        return;
+    i->move(pos.first + (PixelsPerBlock - PixelsPerItem) / 2, pos.second + (PixelsPerBlock - PixelsPerItem) / 2);
 }
 
 void Table::interact(Item*& i)
@@ -19,6 +23,10 @@ void Table::interact(Item*& i)
 	else if (this->i == nullptr) {
 		this->i = i;
 		i = nullptr;
+        if (this->i != nullptr) {
+            auto pos = block2Pixel(this->x, this->y, (dynamic_cast<Game*>(parent))->m);
+            this->i->move(pos.first + (PixelsPerBlock - PixelsPerItem) / 2, pos.second + (PixelsPerBlock - PixelsPerItem) / 2);
+        }
 	}
 	else {
 		i->interact(i, this->i);

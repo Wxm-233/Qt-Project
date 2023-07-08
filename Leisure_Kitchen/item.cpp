@@ -13,4 +13,5 @@ Item::~Item()
 void Item::move(int x, int y)
 {
     picture->move(x, y);
+    picture->raise();
 }

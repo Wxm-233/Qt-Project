@@ -11,6 +11,7 @@ class Map;
 
 class Receiver : public MapBlock
 {
+
 public:
     Receiver(int x, int y, Map* m, QWidget* parent);
     void receive(const std::vector<Food*>& v);

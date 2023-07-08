@@ -5,6 +5,8 @@ Character::Character(QWidget *parent, int x, int y) : x(x), y(y), facing(0), i(n
 {
     //img = new QImage(":/Pictures/assests/Pictures/test_Character.png");
     image = new QImage(*GamePics::Cook1);
+    this->w = image->width();
+    this->h = image->height();
     picture = new QLabel(parent);
     picture->setPixmap(QPixmap::fromImage(*image));
     picture->resize(image->width(), image->height());
@@ -56,7 +58,7 @@ void Character::move(bool directionState[4], Map* m)
 
     if (newFacing != facing) {
         qtf->rotate((facing - newFacing) / PI * 180);
-        std::clog << "dtheta:" << (facing - newFacing) / PI * 180 << std::endl;
+//        std::clog << "dtheta:" << (facing - newFacing) / PI * 180 << std::endl;
 //        std::clog << qtf->m11() << ' ' << qtf->m12() << ' ' << qtf->m13() << std::endl
 //            << qtf->m21() << ' ' << qtf->m22() << ' ' << qtf->m23() << std::endl
 //            << qtf->m31() << ' ' << qtf->m32() << ' ' << qtf->m33() << std::endl << std::endl;
@@ -78,6 +80,21 @@ void Character::move(bool directionState[4], Map* m)
 
     int itemx = x + w * (1 + std::cos(facing)) / 2;
     int itemy = y + h * (1 - std::sin(facing)) / 2;
+
+    switch (i->type) {
+    case POT:
+    case PLATE:
+        itemx -= PixelsPerItem / 2;
+        itemy -= PixelsPerItem / 2;
+        break;
+    case FOOD:
+        itemx -= PixelsPerFood / 2;
+        itemy -= PixelsPerFood / 2;
+        break;
+    default:
+        break;
+    }
+
     i->move(itemx, itemy);
 }
 

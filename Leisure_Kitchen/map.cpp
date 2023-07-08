@@ -26,7 +26,9 @@ void Map::addBlock(QString BlockType, int x, int y, Item* item, FoodType ft)
         map[{x, y}] = new ChoppingBlock(x, y, parent);
     }
     else if (BlockType == "Receiver") {
-        map[{x, y}] = new Receiver(x, y, this, parent);
+        Receiver* r = new Receiver(x, y, this, parent);
+        map[{x, y}] = r;
+        //connect(r, &Receiver::receive, this, &Map::receive);
     }
     else if (BlockType == "Repository") {
         map[{x, y}] = new Repository(ft, x, y, parent);

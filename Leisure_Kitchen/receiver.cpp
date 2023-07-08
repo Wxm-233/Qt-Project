@@ -13,7 +13,11 @@ Receiver::Receiver(int x, int y, Map* m, QWidget* parent) : MapBlock(RECEIVER, x
 
 void Receiver::receive(const std::vector<Food*>& v)
 {
-    //m->receive(Dish(v));
+    std::clog << "Received";
+    for (auto& i : v) {
+        std::clog << i->type() << ' ';
+    }
+    std::clog << std::endl;
 }
 
 void Receiver::interact(Item*& i)

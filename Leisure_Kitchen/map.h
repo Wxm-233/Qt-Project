@@ -27,7 +27,6 @@ public:
     bool isReachable(int x, int y);//x,y are pixels
     MapBlock* locate(int x, int y);//x,y are pixels
     void init();
-    void receive(const Dish& d);
     int x();
     int y();
     int w();
@@ -43,6 +42,8 @@ private:
     int _h;
 signals:
     void receiveDish(const Dish& d);
+public slots:
+    void receive(const Dish& d);
 };
 
 #endif // MAP_H

@@ -24,7 +24,7 @@
         "FoodType": "Fish"
     },
     "10, 0": {
-        "BlockType": "Table"
+        "BlockType": "TrashCan"
     },
     "0, 1": {
         "BlockType": "Table",

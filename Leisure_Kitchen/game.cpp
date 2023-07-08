@@ -41,12 +41,15 @@ void Game::keyPressEvent(QKeyEvent *e)
 
     switch (e->key()) {
     case Qt::Key_Space:
-        if (isPaused)
-            emit gamePaused();
+        if (isPaused) {
+            isPaused = false;
+            emit gameResumed();
+        }
         else {
             for (auto& i : directionStatus)
                 i = false;
-            emit gameResumed();
+            emit gamePaused();
+            isPaused = true;
         }
         break;
     case Qt::Key_W:
@@ -118,4 +121,6 @@ void Game::init()//connect signals with slots
 {
     connect(o, &Orders::addScore, sb, &ScoreBoard::addScore);
     connect(m, &Map::receiveDish, o, &Orders::receive);
+    connect(this, &Game::gamePaused, c, &Character::pause);
+    connect(this, &Game::gameResumed, c, &Character::resume);
 }

@@ -30,7 +30,7 @@ QImage* BackGround;
 void InitPics()
 {
     GamePics::Table = new QImage(":/Pictures/assets/Pictures/Table.jpg");
-    GamePics::TrashCan = new QImage(":/Pictures/assets/Pictures/Trashcan.jpg");
+    GamePics::TrashCan = new QImage(":/Pictures/assets/Pictures/TrashCan.png");
     GamePics::ChoppingBlock = new QImage(":/Pictures/assets/Pictures/ChoppingBlock.png");
     GamePics::Receiver = new QImage(":/Pictures/assets/Pictures/Receiver.png");
     GamePics::Repository = new QImage(":/Pictures/assets/Pictures/Repository.png");
@@ -39,7 +39,7 @@ void InitPics()
     GamePics::Fish_Cut = new QImage(":/Pictures/assets/Pictures/Fish_Cut.png");
     GamePics::Rice_Raw = new QImage(":/Pictures/assets/Pictures/Rice_Raw.png");
     GamePics::Rice_Cooked = new QImage(":/Pictures/assets/Pictures/Rice_Cooked.png");
-    GamePics::HaiTai = new QImage(":/Pictures/assets/Pictures/HaiTai.png");
+    GamePics::HaiTai = new QImage(":/Pictures/assets/Pictures/Haitai.png");
     GamePics::Cucumber = new QImage(":/Pictures/assets/Pictures/Cucumber.png");
     GamePics::Cucumber_Cut = new QImage(":/Pictures/assets/Pictures/Cucumber_Cut.png");
     GamePics::Cabbage = new QImage(":/Pictures/assets/Pictures/Cabbage.png");

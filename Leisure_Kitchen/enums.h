@@ -28,6 +28,7 @@ constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
 constexpr int PixelsPerBlock = 90;
 constexpr int PixelsPerFood = 40;
+constexpr int PixelsPerItem = 80;
 
 void InitPics();
 

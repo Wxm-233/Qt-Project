@@ -3,6 +3,7 @@
 
 #include <mapblock.h>
 #include <item.h>
+#include <enums.h>
 
 class Table : public MapBlock
 {

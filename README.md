@@ -1,2 +1,9 @@
 # Qt-Project
-程设大作业repo
+# Leisure_Kitchen
+
+## Instructions
+
+- WASD to move
+- U to interact
+- I to dash
+- Space to pause

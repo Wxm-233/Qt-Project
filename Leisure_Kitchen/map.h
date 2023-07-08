@@ -22,16 +22,25 @@ class Map : public QObject
     Q_OBJECT
 
 public:
-    Map(QWidget* parent);
+    Map(QWidget* parent,int x,int y, int w,int h);
     void addBlock(QString BlockType, int x, int y, Item* item, FoodType ft);
-    bool isReachable(int x, int y);
-    MapBlock* locate(int x, int y);
+    bool isReachable(int x, int y);//x,y are pixels
+    MapBlock* locate(int x, int y);//x,y are pixels
     void init();
     void receive(const Dish& d);
+    int x();
+    int y();
+    int w();
+    int h();
+    bool reachable[20][20];
 private:
     QWidget* parent;
     std::map<std::pair<int, int>, MapBlock*> map;
     QJsonDocument qjd;
+    int _x;
+    int _y;
+    int _w;
+    int _h;
 signals:
     void receiveDish(const Dish& d);
 };

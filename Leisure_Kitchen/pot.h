@@ -8,7 +8,7 @@
 class Pot : public Item
 {
 public:
-    Pot(int x, int y);
+    Pot(int x, int y, QWidget* parent);
     void interact(Item*& rThis, Item*& rAnother);
     void addFood(Item*& f);
     bool isCooking();

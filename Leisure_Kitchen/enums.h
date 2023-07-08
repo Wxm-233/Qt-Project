@@ -26,11 +26,16 @@ enum ItemType {
 
 constexpr double PI = 3.1415926535897932384626;
 constexpr int FPS = 60;
-constexpr int PixelsPerBlock = 100;
+constexpr int PixelsPerBlock = 90;
+constexpr int PixelsPerFood = 40;
 
 void InitPics();
-std::pair<int, int> pixel2Block(int x, int y);
-std::pair<int, int> block2Pixel(int x, int y);
+
+class Map;
+
+std::pair<int, int> pixel2Block(int x, int y, Map* m);
+std::pair<int, int> block2Pixel(int x, int y, Map* m);
+QImage* fType2QImage(FoodType t);
 
 namespace GamePics {
 extern QImage* Table;
@@ -55,7 +60,6 @@ extern QImage* Plate;
 extern QImage* Cook1;
 extern QImage* Cook2;
 extern QImage* BackGround;
-extern QImage* Coin;
 }
 
 //enum Cooking_Bench_Type {

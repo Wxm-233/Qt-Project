@@ -27,6 +27,7 @@ public:
     ~Game();
     void init();
     //bool is_Paused();
+    Map* m;
 public slots:
     void mainLoop();
     void keyPressEvent(QKeyEvent *e);
@@ -37,7 +38,6 @@ private:
     Character* c;
     QTimer* t;
     Orders* o;
-    Map* m;
     ScoreBoard* sb;
     bool isPaused = false;
     bool directionStatus[4] = {false};

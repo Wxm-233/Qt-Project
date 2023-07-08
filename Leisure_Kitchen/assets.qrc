@@ -1,9 +1,13 @@
 <RCC>
     <qresource prefix="/Pictures">
         <file>assets/Pictures/BackGround.jpg</file>
+        <file>assets/Pictures/Table.jpg</file>
+        <file>assets/Pictures/startBG.jpg</file>
         <file>assets/Pictures/Cabbage.png</file>
         <file>assets/Pictures/Cabbage_Cut.png</file>
+        <file>assets/Pictures/Character.png</file>
         <file>assets/Pictures/ChoppingBlock.png</file>
+        <file>assets/Pictures/Clock.png</file>
         <file>assets/Pictures/Coin.png</file>
         <file>assets/Pictures/Cook1.png</file>
         <file>assets/Pictures/Cook2.png</file>
@@ -12,21 +16,25 @@
         <file>assets/Pictures/Cucumber_Cut.png</file>
         <file>assets/Pictures/Fish.png</file>
         <file>assets/Pictures/Fish_Cut.png</file>
+        <file>assets/Pictures/Floor.png</file>
         <file>assets/Pictures/Haitai.png</file>
+        <file>assets/Pictures/Money.png</file>
+        <file>assets/Pictures/OrderList.png</file>
         <file>assets/Pictures/Plate.png</file>
         <file>assets/Pictures/Pot.png</file>
+        <file>assets/Pictures/Receiver.png</file>
         <file>assets/Pictures/Recevier.png</file>
         <file>assets/Pictures/Repository.png</file>
         <file>assets/Pictures/Rice_Cooked.png</file>
         <file>assets/Pictures/Rice_Raw.png</file>
-        <file>assets/Pictures/Table.jpg</file>
+        <file>assets/Pictures/Square.png</file>
         <file>assets/Pictures/Tomato.png</file>
         <file>assets/Pictures/Tomato_Cut.png</file>
         <file>assets/Pictures/TrashCan.png</file>
-        <file>assets/Pictures/startBG.jpg</file>
     </qresource>
     <qresource prefix="/Audios"/>
     <qresource prefix="/MapResources">
         <file>assets/MapResources/Map1.json</file>
+        <file>assets/MapResources/Map2.json</file>
     </qresource>
 </RCC>

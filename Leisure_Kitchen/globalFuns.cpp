@@ -1,5 +1,6 @@
 
 #include <enums.h>
+#include <map.h>
 
 namespace GamePics {
 QImage* Table;
@@ -24,23 +25,22 @@ QImage* Plate;
 QImage* Cook1;
 QImage* Cook2;
 QImage* BackGround;
-QImage* Coin;
 }
 
 void InitPics()
 {
     GamePics::Table = new QImage(":/Pictures/assets/Pictures/Table.jpg");
     GamePics::TrashCan = new QImage(":/Pictures/assets/Pictures/Trashcan.jpg");
-    GamePics::ChoppingBlock = new QImage(":/Pictures/assets/Pictrues/ChoppingBlock.png");
-    GamePics::Receiver = new QImage(":/Pictures/assets/Pictrues/Receiver.png");
-    GamePics::Repository = new QImage(":/Pictures/assets/Pictrues/Repository.png");
-    GamePics::CookingBench = new QImage(":/Pictures/assets/Pictrues/CookingBench.png");
-    GamePics::Fish = new QImage(":/Pictures/assets/Pictrues/Fish.png");
-    GamePics::Fish_Cut = new QImage(":/Pictures/assets/Pictrues/Fish_Cut.png");
-    GamePics::Rice_Raw = new QImage(":/Pictures/assets/Pictrues/Rice_Raw.png");
-    GamePics::Rice_Cooked = new QImage(":/Pictures/assets/Pictrues/Rice_Cooked.png");
-    GamePics::HaiTai = new QImage(":/Pictures/assets/Pictrues/HaiTai.png");
-    GamePics::Cucumber = new QImage(":/Pictures/assets/Pictrues/Cucumber.png");
+    GamePics::ChoppingBlock = new QImage(":/Pictures/assets/Pictures/ChoppingBlock.png");
+    GamePics::Receiver = new QImage(":/Pictures/assets/Pictures/Receiver.png");
+    GamePics::Repository = new QImage(":/Pictures/assets/Pictures/Repository.png");
+    GamePics::CookingBench = new QImage(":/Pictures/assets/Pictures/CookingBench.png");
+    GamePics::Fish = new QImage(":/Pictures/assets/Pictures/Fish.png");
+    GamePics::Fish_Cut = new QImage(":/Pictures/assets/Pictures/Fish_Cut.png");
+    GamePics::Rice_Raw = new QImage(":/Pictures/assets/Pictures/Rice_Raw.png");
+    GamePics::Rice_Cooked = new QImage(":/Pictures/assets/Pictures/Rice_Cooked.png");
+    GamePics::HaiTai = new QImage(":/Pictures/assets/Pictures/HaiTai.png");
+    GamePics::Cucumber = new QImage(":/Pictures/assets/Pictures/Cucumber.png");
     GamePics::Cucumber_Cut = new QImage(":/Pictures/assets/Pictures/Cucumber_Cut.png");
     GamePics::Cabbage = new QImage(":/Pictures/assets/Pictures/Cabbage.png");
     GamePics::Cabbage_Cut = new QImage(":/Pictures/assets/Pictures/Cabbage_Cut.png");
@@ -51,16 +51,38 @@ void InitPics()
     GamePics::Cook1 = new QImage(":/Pictures/assets/Pictures/Cook1.png");
     GamePics::Cook2 = new QImage(":/Pictures/assets/Pictures/Cook2.png");
     GamePics::BackGround = new QImage(":/Pictures/assets/Pictures/BackGround.jpg");
-    GamePics::Coin = new QImage(":/Pictures/assets/Pictures/Coin.png");
 }
 
-//not written yet
-std::pair<int, int> pixel2Block(int x, int y)
+std::pair<int, int> pixel2Block(int x, int y, Map* m)
 {
-    return { x, y };
+    int ret_x = (x-m->x())/PixelsPerBlock;
+    int ret_y = (y-m->y())/PixelsPerBlock;
+    return { ret_x, ret_y };
 }
 
-std::pair<int, int> block2Pixel(int x, int y)
+std::pair<int, int> block2Pixel(int x, int y, Map* m)
 {
-    return { x, y };
+    int ret_x=m->x()+PixelsPerBlock*x;
+    int ret_y=m->y()+PixelsPerBlock*y;
+    return { ret_x, ret_y };
+}
+
+QImage* fType2QImage(FoodType t)
+{
+    switch (t) {
+    case FISH:
+        return GamePics::Fish;
+    case RICE:
+        return GamePics::Rice_Raw;
+    case HAITAI:
+        return GamePics::HaiTai;
+    case CUCUMBER:
+        return GamePics::Cucumber;
+    case CABBAGE:
+        return GamePics::Cabbage;
+    case TOMATO:
+        return GamePics::Tomato;
+    default:
+        return nullptr;
+    }
 }

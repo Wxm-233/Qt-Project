@@ -7,7 +7,7 @@
 class Food : public Item
 {
 public:
-    Food(FoodType t, int x, int y);
+    Food(FoodType t, int x, int y, QWidget* parent);
     void interact(Item*& rThis, Item*& rAnother);
     bool operator<(const Food& another) const;
     bool operator==(const Food& another) const;

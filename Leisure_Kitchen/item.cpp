@@ -1,16 +1,16 @@
 #include "item.h"
 
-Item::Item(ItemType type, int x, int y) : type(type), x(x), y(y)
+Item::Item(ItemType type, int x, int y, QWidget* parent) : type(type), x(x), y(y), parent(parent)
 {
-	label = new QLabel;
+    picture = new QLabel;
 }
 
 Item::~Item()
 {
-	delete label;
+    delete picture;
 }
 
 void Item::move(int x, int y)
 {
-	label->move(x, y);
+    picture->move(x, y);
 }

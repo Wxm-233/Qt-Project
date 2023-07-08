@@ -1,7 +1,7 @@
 
 #include "mapblock.h"
 
-MapBlock::MapBlock(BlockType t, int x, int y, QWidget* parent) : x(x), y(y), t(t)
+MapBlock::MapBlock(BlockType t, int x, int y, QWidget* parent) : x(x), y(y), t(t), parent(parent)
 {
     switch (t) {
     case TABLE:

@@ -5,8 +5,8 @@ Orders::Orders(QWidget* father) : father(father)
     t = new QTimer(this);
     t->start(25000);
     connect(t, &QTimer::timeout, this, &Orders::add);
-    Food f(HAITAI, 0, 0);
-    available_dishes.push_back(Dish({new Food(HAITAI, 0, 0) }, 5));
+    Food f(HAITAI, 0, 0, father);
+    available_dishes.push_back(Dish({new Food(HAITAI, 0, 0, father) }, 5));
 }
 
 void Orders::add()

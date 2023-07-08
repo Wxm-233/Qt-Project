@@ -19,11 +19,12 @@ class MapBlock
 public:
     MapBlock(BlockType t, int x, int y, QWidget* parent);
     BlockType type();
-private:
+protected:
     QLabel *picture;
     int w, h;//in blocks
     int x, y;//top left corner, in blocks
     BlockType t;
+    QWidget* parent;
 public slots:
     virtual void interact(Item*& i) = 0;
 };

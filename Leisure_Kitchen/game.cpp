@@ -9,18 +9,19 @@ Game::Game(QWidget *parent)
 {
     ui->setupUi(this);
 
-    int cx = this->width() / 2;
-    int cy = this->height() * 5 / 8;
+    int cx = 415;//this->width() / 2;
+    int cy = 265;//this->height() * 5 / 8;
     c = new Character(this, cx, cy);
 
     t = new QTimer(this);
     QObject::connect(t, &QTimer::timeout, this, &Game::mainLoop);
     t->start(1000 / FPS);
-
+    m = new Map(this,330,180,11,6);
+    m->init();
     o = new Orders(this);
     sb = new ScoreBoard(this);
-    m = new Map(this);
-    m->init();
+
+
     //connect(c, &Character::facing_changed, this, &Game::cFacingChange);
 }
 

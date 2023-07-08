@@ -10,7 +10,7 @@ class Food;
 class Plate : public Item
 {
 public:
-    Plate(int x, int y);
+    Plate(int x, int y, QWidget* parent);
     void addFood(Item*& f);
     void interact(Item*& rThis, Item*& rAnother);
     void clear();

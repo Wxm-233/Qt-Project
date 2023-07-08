@@ -1,0 +1,120 @@
+{
+    "0, 0": {
+        "BlockType": "Repository",
+        "FoodType": "Cucumber"
+    },
+    "3, 0": {
+        "BlockType": "CookingBench",
+        "ItemType": "Pot"
+    },
+    "4, 0": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "5, 0": {
+        "BlockType": "Repository",
+        "FoodType": "Rice"
+    },
+    "6, 0": {
+        "BlockType": "Repository",
+        "FoodType": "Rice"
+    },
+    "7, 0" : {
+        "BlockType": "Repository",
+        "FoodType": "Fish"
+    },
+    "10, 0": {
+        "BlockType": "Table"
+    },
+    "0, 1": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "10, 1": {
+        "BlockType": "Receiver"
+    },
+    "0, 2": {
+        "BlockType": "Table"
+    },
+    "3, 2": {
+        "BlockType": "Repository",
+        "FoodType": "Fish"
+    },
+    "4, 2": {
+        "BlockType": "Repository",
+        "FoodType": "Rice"
+    },
+    "5, 2": {
+        "BlockType": "Repository",
+        "FoodType": "HaiTai"
+    },
+    "6, 2": {
+        "BlockType": "CookingBench",
+        "ItemType": "Pot"
+    },
+    "7, 2": {
+        "BlockType": "ChoppingBlock"
+    },
+    "10, 2": {
+        "BlockType": "ChoppingBlock"
+    },
+    "0, 3": {
+        "BlockType": "Table"
+    },
+    "3, 3": {
+        "BlockType": "CookingBench",
+        "ItemType": "Pot"
+    },
+    "4, 3": {
+        "BlockType": "Repository",
+        "FoodType": "Cucumber"
+    },
+    "5, 3": {
+        "BlockType": "Repository",
+        "FoodType": "Cabbage"
+    },
+    "6, 3": {
+        "BlockType": "Repository",
+        "FoodType": "Tomato"
+    },
+    "7, 3": {
+        "BlockType": "Table"
+    },
+    "10, 3": {
+        "BlockType": "ChoppingBlock"
+    },
+    "0, 4": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "10, 4": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "0, 5": {
+        "BlockType": "Repository",
+        "FoodType": "Fish"
+    },
+    "3, 5": {
+        "BlockType": "ChoppingBlock"
+    },
+    "4, 5": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    },
+    "5, 5": {
+        "BlockType": "ChoppingBlock"
+    },
+    "6, 5": {
+        "BlockType": "Repository",
+        "FoodType": "Cabbage"
+    },
+    "7, 5": {
+        "BlockType": "Repository",
+        "FoodType": "HaiTai"
+    },
+    "10, 5": {
+        "BlockType": "Table",
+        "ItemType": "Plate"
+    }
+}

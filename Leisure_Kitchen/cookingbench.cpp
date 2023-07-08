@@ -1,8 +1,15 @@
 #include "cookingbench.h"
+#include <game.h>
 
 CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BENCH, x, y, parent), p(nullptr)
 {
     t = new QTimer();
+    picture = new QLabel(parent);
+    picture->setPixmap(QPixmap::fromImage(*GamePics::CookingBench));
+    picture->resize(PixelsPerBlock,PixelsPerBlock);
+    std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+    picture->move(pos.first, pos.second);
+    //std::clog<<"CookingBench was constructed"<<std::endl;
 }
 
 void CookingBench::interact(Item*& i)

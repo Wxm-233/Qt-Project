@@ -1,10 +1,16 @@
 #include "pot.h"
 #include <plate.h>
 #include <food.h>
+#include <game.h>
 
-Pot::Pot(int x, int y) : Item(POT, x, y)
+Pot::Pot(int x, int y, QWidget* parent) : Item(POT, x, y, parent)
 {
     t = new QTimer;
+    picture = new QLabel(parent);
+    picture->setPixmap(QPixmap::fromImage(*GamePics::Pot));
+    picture->resize(PixelsPerBlock,PixelsPerBlock);
+    std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+    picture->move(pos.first, pos.second);
 }
 
 void Pot::addFood(Item*& f)

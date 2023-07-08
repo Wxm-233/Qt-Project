@@ -26,7 +26,7 @@ class Character : public QObject
 {
     Q_OBJECT
 private:
-    const static int speed = 10;
+    const static int speed = 7;
     QImage *image;
     QLabel *picture;
     QTransform* qtf;

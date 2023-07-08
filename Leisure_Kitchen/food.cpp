@@ -1,38 +1,50 @@
 #include "food.h"
 #include <pot.h>
 #include <plate.h>
+#include <game.h>
 
-Food::Food(FoodType t, int x, int y) : t(t), Item(FOOD, x, y)
+Food::Food(FoodType t, int x, int y, QWidget* parent) : Item(FOOD, x, y,parent),t(t)
 {
+    picture = new QLabel(parent);
+
     switch (t)
     {
     case FISH:
         _isCut = false;
         _isCooked = true;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Fish));
         break;
     case RICE:
         _isCut = true;
         _isCooked = false;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Rice_Raw));
         break;
     case HAITAI:
         _isCut = true;
         _isCooked = true;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::HaiTai));
         break;
     case CUCUMBER:
         _isCut = false;
         _isCooked = true;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Cucumber));
         break;
     case CABBAGE:
         _isCut = false;
         _isCooked = true;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Cabbage));
         break;
     case TOMATO:
         _isCut = false;
         _isCooked = true;
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Tomato));
         break;
     default:
         break;
     }
+    picture->resize(PixelsPerBlock,PixelsPerBlock);
+    std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+    picture->move(pos.first, pos.second);
 }
 
 void Food::interact(Item*& rThis, Item*& rAnother)

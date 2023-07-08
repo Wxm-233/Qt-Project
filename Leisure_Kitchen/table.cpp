@@ -1,8 +1,13 @@
 #include "table.h"
+#include <game.h>
 
-Table::Table(Item* i, int x, int y, QWidget* parent) : i(i), MapBlock(TABLE, x, y, parent)
+Table::Table(Item* i, int x, int y, QWidget* parent) : MapBlock(TABLE, x, y, parent), i(i)
 {
-
+    picture = new QLabel(parent);
+    picture->setPixmap(QPixmap::fromImage(*GamePics::Table));
+    picture->resize(PixelsPerBlock,PixelsPerBlock);
+    std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+    picture->move(pos.first, pos.second);
 }
 
 void Table::interact(Item*& i)

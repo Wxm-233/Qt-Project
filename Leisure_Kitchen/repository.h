@@ -12,6 +12,7 @@ public:
     void interact(Item*& i);
 private:
     FoodType t;
+    QLabel* food;
 };
 
 #endif // REPOSITORY_H

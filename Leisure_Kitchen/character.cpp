@@ -11,7 +11,7 @@ Character::Character(QWidget *parent, int x, int y) : x(x), y(y), facing(0), i(n
     qtf = new QTransform;
     //picture->resize(60, 60);
     //picture->setPixmap(QPixmap::fromImage(*img));
-    picture->move(x - 50, y - 50);
+    picture->move(x, y);
     facing = PI*3/2;
     //picture->show();
 }
@@ -40,8 +40,10 @@ void Character::move(bool directionState[4], Map* m)
     int new_x = x + speed * x_dir;
     int new_y = y + speed * y_dir;
 
-    x = m->isReachable(new_x, y) ? new_x : x;
-    y = m->isReachable(x, new_y) ? new_y : y;
+    if(m->isReachable(new_x,y)&&m->isReachable(new_x+image->width(),y)&&m->isReachable(new_x,y+image->height())&&m->isReachable(new_x+image->width(),y+image->height()))
+        x=new_x;
+    if(m->isReachable(x,new_y)&&m->isReachable(x+image->width(),new_y)&&m->isReachable(x,new_y+image->height())&&m->isReachable(x+image->width(),new_y+image->height()))
+        y=new_y;
 
     double newFacing;
 
@@ -116,6 +118,7 @@ void Character::interact(Map* m)
     MapBlock* mb = m->locate(dest_x, dest_y);
     if (mb == nullptr)
         return;
+    mb->interact(i);
 }
 
 //void Character::interact(int x, int y)

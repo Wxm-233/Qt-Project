@@ -17,6 +17,8 @@ private:
     QTimer* t;
     Item* f = nullptr;
     bool _isCooking = false;
+    QLabel* processing;
+    QMovie* movie;
 public slots:
     void cookFood();
 };

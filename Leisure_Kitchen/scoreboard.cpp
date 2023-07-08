@@ -1,9 +1,12 @@
 #include "scoreboard.h"
+#include <game.h>
+#include <ui_game.h>
 
-ScoreBoard::ScoreBoard(QWidget* parent)
+ScoreBoard::ScoreBoard(QWidget* parent) : parent(parent)
 {
-    label = new QLabel(parent);
-    label->setGeometry(0, parent->y() - 50, 100, 50);
+    Game* g = dynamic_cast<Game*>(parent);
+    label = new QLabel(g->ui->label_8);
+    label->setGeometry(0, 0, 200, 100);
     label->setTextFormat(Qt::RichText);
     label->setText("<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; \">Score:0</span></p></body></html>");
 }

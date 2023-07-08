@@ -13,17 +13,18 @@ Receiver::Receiver(int x, int y, Map* m, QWidget* parent) : MapBlock(RECEIVER, x
 
 void Receiver::receive(const std::vector<Food*>& v)
 {
-    std::clog << "Received";
-    for (auto& i : v) {
-        std::clog << i->type() << ' ';
-    }
-    std::clog << std::endl;
+//    std::clog << "Received";
+//    for (auto& i : v) {
+//        std::clog << i->type() << ' ';
+//    }
+//    std::clog << std::endl;
+    //emit receiveSignal(Dish(v));
 }
 
 void Receiver::interact(Item*& i)
 {
     if (i != nullptr && i->type == PLATE) {
         this->receive(((Plate*)i)->dish());
-    }
-    ((Plate*)(i))->clear();
+        ((Plate*)(i))->clear();
+    } 
 }

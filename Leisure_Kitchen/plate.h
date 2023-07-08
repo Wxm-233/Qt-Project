@@ -14,6 +14,7 @@ public:
     void addFood(Item*& f);
     void interact(Item*& rThis, Item*& rAnother);
     void clear();
+    void move(int x, int y);
     const std::vector<Food*>& dish();
 private:
     std::vector<Food*> foods;

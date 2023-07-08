@@ -24,6 +24,9 @@ FoodType Repository::type()
 void Repository::interact(Item*& i)
 {
     if (i == nullptr) {
-        i = new Food(t, 0, 0, parent);
+        //i = new Plate(x, y, parent);
+        i = new Food(t, x, y, parent);
+        i->show();
+        //i = new Pot(x, y, parent);
     }
 }

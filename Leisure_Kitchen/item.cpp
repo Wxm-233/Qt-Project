@@ -14,4 +14,16 @@ void Item::move(int x, int y)
 {
     picture->move(x, y);
     picture->raise();
+    this->x = x;
+    this->y = y;
+}
+
+void Item::show()
+{
+    picture->show();
+}
+
+void Item::hide()
+{
+    picture->hide();
 }

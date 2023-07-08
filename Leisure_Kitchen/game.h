@@ -26,6 +26,7 @@ public:
     Game(QWidget *parent);
     ~Game();
     void init();
+    Ui::Game *ui;
     //bool is_Paused();
     Map* m;
 public slots:
@@ -34,11 +35,13 @@ public slots:
     void keyReleaseEvent(QKeyEvent *e);
     void closeEvent(QCloseEvent* e);
 private:
-    Ui::Game *ui;
+
     Character* c;
     QTimer* t;
     Orders* o;
     ScoreBoard* sb;
+    QLabel* ZanShi;
+    QImage* BuNeng;
     bool isPaused = false;
     bool directionStatus[4] = {false};
 signals:

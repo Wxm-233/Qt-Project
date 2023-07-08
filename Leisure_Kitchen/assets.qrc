@@ -23,7 +23,6 @@
         <file>assets/Pictures/Plate.png</file>
         <file>assets/Pictures/Pot.png</file>
         <file>assets/Pictures/Receiver.png</file>
-        <file>assets/Pictures/Recevier.png</file>
         <file>assets/Pictures/Repository.png</file>
         <file>assets/Pictures/Rice_Cooked.png</file>
         <file>assets/Pictures/Rice_Raw.png</file>
@@ -31,6 +30,8 @@
         <file>assets/Pictures/Tomato.png</file>
         <file>assets/Pictures/Tomato_Cut.png</file>
         <file>assets/Pictures/TrashCan.png</file>
+        <file>assets/Pictures/Processing.gif</file>
+        <file>assets/Pictures/Paused.png</file>
     </qresource>
     <qresource prefix="/Audios"/>
     <qresource prefix="/MapResources">

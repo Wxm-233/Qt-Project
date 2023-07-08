@@ -20,7 +20,11 @@ Game::Game(QWidget *parent)
     m->init();
     o = new Orders(this);
     sb = new ScoreBoard(this);
-
+    BuNeng = new QImage(":/Pictures/assets/Pictures/Paused.png");
+    ZanShi = new QLabel(this);
+    ZanShi->setPixmap(QPixmap::fromImage(*BuNeng));
+    ZanShi->setGeometry(425, 348, BuNeng->width(), BuNeng->height());
+    ZanShi->hide();
 
     //connect(c, &Character::facing_changed, this, &Game::cFacingChange);
 }
@@ -43,12 +47,14 @@ void Game::keyPressEvent(QKeyEvent *e)
     case Qt::Key_Space:
         if (isPaused) {
             isPaused = false;
+            ZanShi->hide();
             emit gameResumed();
         }
         else {
             for (auto& i : directionStatus)
                 i = false;
             emit gamePaused();
+            ZanShi->show();
             isPaused = true;
         }
         break;

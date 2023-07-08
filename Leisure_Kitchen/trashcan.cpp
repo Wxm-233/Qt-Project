@@ -12,6 +12,8 @@ TrashCan::TrashCan(int x, int y, QWidget* parent) : MapBlock(TRASH_CAN, x, y, pa
 
 void TrashCan::interact(Item*& i)
 {
+	if (i == nullptr)
+		return;
 	if (i->type == PLATE)
 		((Plate*)i)->clear();
 	else if (i->type == POT) {

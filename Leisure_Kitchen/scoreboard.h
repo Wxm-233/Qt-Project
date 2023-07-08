@@ -15,6 +15,7 @@ public:
 private:
     int score;
     QLabel* label;
+    QWidget* parent;
 public slots:
     void addScore(int dScore);
 };

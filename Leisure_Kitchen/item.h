@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QObject>
 #include <QWidget>
+#include <QMovie>
 
 #include <enums.h>
 
@@ -17,7 +18,9 @@ public:
     ~Item();
     virtual void interact(Item*& rThis, Item*& rAnother) = 0;
     ItemType type;
-    void move(int x, int y);//in pixels
+    virtual void move(int x, int y);//in pixels
+    void show();
+    void hide();
 protected:
     int w = 1, h = 1;
     int x, y;

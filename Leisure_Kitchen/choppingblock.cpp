@@ -9,28 +9,70 @@ ChoppingBlock::ChoppingBlock(int x, int y, QWidget* parent) : MapBlock(CHOPPING_
     picture->resize(PixelsPerBlock,PixelsPerBlock);
     std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
     picture->move(pos.first, pos.second);
+    movie = new QMovie(":/Pictures/assets/Pictures/Processing.gif");
 }
+
+ChoppingBlock::~ChoppingBlock()
+{
+    delete movie;
+}
+
 
 void ChoppingBlock::interact(Item*& i)
 {
-	if (i == nullptr) {
+    if (i == nullptr && !_isCutting) {
 		i = f;
 		f = nullptr;
 	}
 	else if (f == nullptr) {
 		if (i->type == FOOD) {
-			this->putFood((Food*)i);
-			i = nullptr;
+            this->putFood(i);
 		}
 	}
 	else {
-		i->interact(i, f);
+        if (!_isCutting)
+            i->interact(i, f);
 	}
 		
 	
 }
 
-void ChoppingBlock::putFood(Food* food)
+void ChoppingBlock::putFood(Item*& food)
 {
-	f = food;
+    if (this->f != nullptr || food == nullptr || food->type != FOOD)
+        return;
+    if (((Food*)food)->isCut())
+        return;
+    this->f = (Food*)food;
+    std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+    f->move(pos.first + (PixelsPerBlock - PixelsPerFood) / 2, pos.second + (PixelsPerBlock - PixelsPerFood) / 2);
+    t->singleShot(ProcessingTime, this, &ChoppingBlock::cutFood);
+    t->start();
+    processing = new QLabel(picture);
+    processing->setGeometry(0, 0, PixelsPerBlock, PixelsPerBlock);
+    processing->setMovie(movie);
+    movie->start();
+    processing->show();
+    _isCutting = true;
+    food = nullptr;
+}
+
+Item*& ChoppingBlock::food()
+{
+    return f;
+}
+
+void ChoppingBlock::cutFood()
+{
+    if (f == nullptr || f->type != FOOD)
+        return;
+    ((Food*)f)->cut();
+    _isCutting = false;
+    movie->stop();
+    delete processing;
+}
+
+bool ChoppingBlock::isCutting()
+{
+    return _isCutting;
 }

@@ -1,7 +1,7 @@
 #include "cookingbench.h"
 #include <game.h>
 
-CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BENCH, x, y, parent), p(nullptr)
+CookingBench::CookingBench(int x, int y, QWidget* parent, Item* p) : MapBlock(COOKING_BENCH, x, y, parent), p(p)
 {
     t = new QTimer();
     picture = new QLabel(parent);
@@ -9,6 +9,11 @@ CookingBench::CookingBench(int x, int y, QWidget* parent) : MapBlock(COOKING_BEN
     picture->resize(PixelsPerBlock,PixelsPerBlock);
     std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
     picture->move(pos.first, pos.second);
+
+    if (p == nullptr)
+        return;
+
+    p->move(pos.first, pos.second);
     //std::clog<<"CookingBench was constructed"<<std::endl;
 }
 
@@ -19,9 +24,13 @@ void CookingBench::interact(Item*& i)
         p = nullptr;
     }
     else if (p == nullptr) {
+        if (i == nullptr)
+            return;
         if (i->type == POT) {
             p = i;
             i = nullptr;
+            std::pair<int, int>pos = block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
+            p->move(pos.first, pos.second);
         }
     }
     else {

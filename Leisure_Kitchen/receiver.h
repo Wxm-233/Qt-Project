@@ -18,6 +18,8 @@ public:
     void interact(Item*& i);
 private:
     Map* m;
+signals:
+    void receiveSignal(const Dish& d);
 };
 
 #endif // RECEIVER_H

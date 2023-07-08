@@ -29,6 +29,7 @@ constexpr int FPS = 60;
 constexpr int PixelsPerBlock = 90;
 constexpr int PixelsPerFood = 40;
 constexpr int PixelsPerItem = 80;
+constexpr int ProcessingTime = 5000;
 
 void InitPics();
 

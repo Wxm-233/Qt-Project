@@ -14,4 +14,6 @@ ui_*.h
 /Leisure_Kitchen/.qmake.stash
 .DS_Store
 /build-*
-/.qtc_clangd
+Leisure_Kitchen/.qtc_clangd
+/LS
+Leisure_Kitchen.exe

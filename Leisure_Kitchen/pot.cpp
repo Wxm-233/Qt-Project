@@ -11,6 +11,7 @@ Pot::Pot(int x, int y, QWidget* parent) : Item(POT, x, y, parent)
     picture->resize(PixelsPerBlock,PixelsPerBlock);
     std::pair<int,int>pos=block2Pixel(x, y, (dynamic_cast<Game*>(parent))->m);
     picture->move(pos.first, pos.second);
+    movie = new QMovie(":/Pictures/assets/Pictures/Processing.gif");
 }
 
 void Pot::addFood(Item*& f)
@@ -20,8 +21,14 @@ void Pot::addFood(Item*& f)
     if (((Food*)f)->isCooked())
         return;
     this->f = (Food*)f;
-    t->singleShot(10000, this, &Pot::cookFood);
+    f->hide();
+    t->singleShot(ProcessingTime, this, &Pot::cookFood);
     t->start();
+    processing = new QLabel(picture);
+    processing->setGeometry(0, 0, PixelsPerBlock, PixelsPerBlock);
+    processing->setMovie(movie);
+    movie->start();
+    processing->show();
     _isCooking = true;
     f = nullptr;
 }
@@ -56,6 +63,8 @@ void Pot::cookFood()
         return;
     ((Food*)f)->cook();
     _isCooking = false;
+    movie->stop();
+    delete processing;
 }
 
 bool Pot::isCooking()

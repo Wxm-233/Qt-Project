@@ -92,9 +92,32 @@ bool Food::isCooked()
 void Food::cut()
 {
     _isCut = true;
+    switch (t) {
+    case FISH:
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Fish_Cut));
+        break;
+    case CABBAGE:
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Cabbage_Cut));
+        break;
+    case CUCUMBER:
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Cucumber_Cut));
+        break;
+    case TOMATO:
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Tomato_Cut));
+        break;
+    default:
+        break;
+    }
 }
 
 void Food::cook()
 {
+    switch (t) {
+    case RICE:
+        picture->setPixmap(QPixmap::fromImage(*GamePics::Rice_Cooked));
+        break;
+    default:
+        break;
+    }
     _isCooked = true;
 }

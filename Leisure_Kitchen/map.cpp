@@ -28,13 +28,13 @@ void Map::addBlock(QString BlockType, int x, int y, Item* item, FoodType ft)
     else if (BlockType == "Receiver") {
         Receiver* r = new Receiver(x, y, this, parent);
         map[{x, y}] = r;
-        //connect(r, &Receiver::receive, this, &Map::receive);
+        //connect(r, &Receiver::receiSig, this, &Map::receive);
     }
     else if (BlockType == "Repository") {
         map[{x, y}] = new Repository(ft, x, y, parent);
     }
     else if (BlockType == "CookingBench") {
-        map[{x, y}] = new CookingBench(x, y, parent);
+        map[{x, y}] = new CookingBench(x, y, parent, item);
     }
 }
 
@@ -85,10 +85,10 @@ void Map::init()
         if (!types["ItemType"].isNull()) {
             QString IType = types["ItemType"].toString();
             if (IType == "Pot") {
-                item = new Pot(px, py, parent);
+                item = new Pot(px + (PixelsPerBlock - PixelsPerItem) / 2, py + (PixelsPerBlock - PixelsPerItem) / 2, parent);
             }
             else if (IType == "Plate") {
-                item = new Plate(px, py, parent);
+                item = new Plate(px + (PixelsPerBlock - PixelsPerItem) / 2, py + (PixelsPerBlock - PixelsPerItem) / 2, parent);
             }
         }
         if (!types["FoodType"].isNull()) {

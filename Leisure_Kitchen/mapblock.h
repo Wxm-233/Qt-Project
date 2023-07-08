@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QPicture>
+#include <QMovie>
 
 #include <enums.h>
 #include <item.h>
@@ -14,8 +15,10 @@
 #include <food.h>
 
 
-class MapBlock
+class MapBlock : public QObject
 {
+    Q_OBJECT
+
 public:
     MapBlock(BlockType t, int x, int y, QWidget* parent);
     BlockType type();

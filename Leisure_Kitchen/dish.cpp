@@ -2,9 +2,11 @@
 
 Dish::Dish(const std::vector<Food*>& f, int value) : _value(value)
 {
-    for (auto &i : f)
-    {
+    for (auto &i : f) {
         this->foods.insert(i);
+    }
+    for (auto& i : foods) {
+        i->hide();
     }
 }
 

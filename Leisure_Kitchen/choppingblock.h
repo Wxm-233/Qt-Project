@@ -9,10 +9,17 @@ class ChoppingBlock : public MapBlock
 {
 public:
     ChoppingBlock(int x, int y, QWidget* parent);
-    void putFood(Food* food);
+    ~ChoppingBlock();
+    void putFood(Item*& food);
+    Item*& food();
+    void cutFood();
+    bool isCutting();
 private:
     QTimer* t = nullptr;
     Item* f = nullptr;
+    bool _isCutting;
+    QMovie* movie;
+    QLabel* processing;
 public slots:
     void interact(Item*& i);
 };
